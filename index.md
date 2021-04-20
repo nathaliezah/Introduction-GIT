@@ -1,7 +1,10 @@
-# Introduction à la gestion de version à l'aide de GIT 
 ### <a id="introduction_main"></a> ###
+# Introduction à la gestion de version à l'aide de GIT 
 
-Ce cours d'[introduction à la gestion des versions à l'aide de GIT](#introduction_main)  est divisé en trois sessions pratiques 
+
+Ce cours d'[introduction à la gestion des versions à l'aide de GIT](#introduction_main)  est divisé en trois séances pratiques :
+
+1. [Travailler sur un répertoire local ](./tp1/index.md)
 
 
 https://pigne.org/teaching/general/lecture/Gestion-de-version-travail-en-equipe
