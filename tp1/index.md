@@ -1,7 +1,6 @@
 # TP 1 : Travailler sur un répertoire local  {#TP1}
-<p style="text-align: left;">
-	<a href="../index.md">Retour à la page principale</a>
-</p>
+[Retour à la page principale](../index.md)
+
 Pour notre premier contact avec git, nous n'aurons besoin que d'un éditeur de texte et d'une installation fonctionnelle de git sur la console. Dans la dernière partie de ce TP, nous commencerons à gérer un petit programme Java, il est donc également pratique d'avoir une machine virtuelle Java installée.
  
  La durée de ce travail pratique sera d'une heure à une heure et demie. 
@@ -14,11 +13,11 @@ Le but de ce premier TP est de commencer à se familiariser avec git. Plus préc
 >1. [Configuration de GIT](#configuration)
 2. [Création d'un dépôt git sur une machine locale](#gitinit)
 3. Création d'un fichier texte README.md au format markdown où nous allons sauvegarder notre compte-rendu
-   3.1. Gérer les différentes modifications du fichier README.md 
-   3.2. Différencier  3 états / 3 zones / 3 actions
+   * Gérer les différentes modifications du fichier README.md 
+   * Différencier  3 états / 3 zones / 3 actions
 4. Gestion de version d'un programme Java 
-   4.1. Cycle de vie git (status, add, commit, log, tag)
-   4.2. Creation du fichier `.gitignore`
+   * Cycle de vie git (status, add, commit, log, tag)
+   * Creation du fichier `.gitignore`
 
 ---
 
@@ -26,7 +25,7 @@ Le but de ce premier TP est de commencer à se familiariser avec git. Plus préc
 
 Git est livré avec un outil appelé `git config` qui vous permet d'obtenir et de définir des variables de configuration qui contrôlent tous les aspects de l'apparence et du fonctionnement de git. 
 
-<mark style="background-color:lightblue;color:black">Pour vérifier les paramètres de configuration actuels de git sur votre machine, ouvrez un terminal et tapez : </mark> 
+Pour vérifier les paramètres de configuration actuels de git sur votre machine, ouvrez un terminal et tapez : 
 
 ```shell
 $:> git config --list
@@ -44,13 +43,32 @@ push.default=matching
 merge.tool=...
 ```
 
-### Votre identit
-Afin de configurer correctement votre git, commençons par définir votre identité 
+### 1.1. Votre identité
 
->```
->$ ping -c 4 host
->```
+La première chose à faire lorsque vous installez Git est de définir votre nom d'utilisateur et votre adresse e-mail. Ceci est important car chaque commit Git utilise ces informations, et elles sont immuablement intégrées dans les commits que vous commencez à créer: 
 
+```shell
+$:> git config --global user.name "John Doe"
+$:> git config --global user.email johndoe@example.com
+```
+Vous ne devez le faire qu'une seule fois si vous passez l'option `--global`, car alors git utilisera toujours ces informations pour tout ce que vous faites sur ce système.
+
+### 1.2. Votre editeur
+
+Maintenant que votre identité est configurée, vous pouvez configurer l'éditeur de texte par défaut qui sera utilisé lorsque git a besoin de vous pour taper un message :
+
+```shell
+$:> git config --global core.editor XXXX
+```
+où XXXX correspond au nom de votre éditeur de texte préféré, par exemple, vim, emacs, gedit, ... 
+
+### 1.2. Votre nom de branch par défaut
+
+
+
+
+>####Exercice : 
+Tapez la commande `git config --list` et assurez-vous que toutes les informations fournis sont correctes.
 
 ## 2. Création d'un dépôt git sur une machine locale {#gitinit}
 
