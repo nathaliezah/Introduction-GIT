@@ -17,7 +17,7 @@ Pour ce cours pratique, <mark style="background-color:gray;color:white"> <b> nou
 Plus précisément, nous aurons besoin de : 
 
 >1. Un éditeur de texte.
-2. Une installation git :
+2. Une installation git (déjà installé sur les machines de l'IUT):
    * Vous pouvez télécharger git [ici pour différentes plates-formes](https://git-scm.com/downloads)
    * Installation de git sur ubuntu : `sudo apt-get update; sudo apt-get install git `
    * [Installation de git sur windows 10](https://www.develves.net/blogs/asd/articles/using-git-with-powershell-on-windows-10/#installing-git)

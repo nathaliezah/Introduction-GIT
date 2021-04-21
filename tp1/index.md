@@ -79,9 +79,14 @@ $:> git config --global init.defaultBranch main
 3. Afin de vérifier que votre nom est correct, tapez  `git config user.name`
 4. Faire pareil pour votre email, tapez  `git config user.email`
 
+[Haut de la page](#TP1)
+--------
+
 ## 2. Création d'un dépôt git sur une machine locale {#gitinit}
 
 Une fois git correctement configuré, nous allons procéder sans plus tarder à créer notre premier répertoire dont nous allons gérer les changements à l'aide de git. 
+
+La première chose que nous allons décider est la structure de répertoires que nous allons utiliser pour ce cours. 
 
 
 
