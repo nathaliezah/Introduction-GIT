@@ -1,69 +1,51 @@
-# Introduction à la gestion de version à l'aide de GIT 
-### <a id="introduction_main"></a> ###
+# TP 1 : Travailler sur un répertoire local  {#TP1}
 
-Ce cours d'[introduction à la gestion des versions à l'aide de GIT](#introduction_main)  est divisé en trois sessions pratiques 
-
-
-https://pigne.org/teaching/general/lecture/Gestion-de-version-travail-en-equipe
+Pour notre premier contact avec git, nous n'aurons besoin que d'un éditeur de texte et d'une installation fonctionnelle de git sur la console. Dans la dernière partie de ce TP, nous commencerons à gérer un petit programme Java, il est donc également pratique d'avoir une machine virtuelle Java installée.
+ 
+ La durée de ce travail pratique sera d'une heure à une heure et demie. 
 
 
+## Objectifs du TP 1
 
-# TP1 : Iniciacion a GIT usando un repertorio local
+Le but de ce premier TP est de commencer à se familiariser avec git. Plus précisément, nous allons apprendre: 
+>1. [Configuration de GIT](#configuration)
+>2. Création d'un dépôt git sur une machine locale
+>3. Création d'un fichier texte README.md au format markdown où nous allons sauvegarder notre compte-rendu
+>3.1. Gérer les différentes modifications du fichier README.md 
+>3.2. Différencier  3 états / 3 zones / 3 actions
+>4. Gestion de version d'un programme Java 
+>4.1. Cycle de vie git (status, add, commit, log, tag)
+>4.2. Creation du fichier `.gitignore`
 
-Para nuestro primer contacto con GIT, no vamos
+---
 
->El objetivo de este primer TP es comenzar a familiarizarse con GIT. 
->- Comandos de base en consola
->- Utilizar GIT de forma simple como gestor de versiones
->- Sin necesidad de conexion a Internet
->
+## 1. Configuration de GIT {#configuration}
 
-[comment]: <> (This is a comment, it will not be included)
+Git est livré avec un outil appelé `git config` qui vous permet d'obtenir et de définir des variables de configuration qui contrôlent tous les aspects de l'apparence et du fonctionnement de git. 
 
-## 1. Bref Introduction à GIT
+<mark style="background-color:lightblue;color:black">Pour vérifier les paramètres de configuration actuels de git sur votre machine, ouvrez un terminal et tapez : </mark> 
 
->**Exercice:**
+```shell
+$:> git config --list
+```
+ce qui devrait afficher des informations similaires à ce qui suit :
+
+```shell
+user.name=...
+user.email=...
+color.status=auto
+color.branch=auto
+color.interactive=auto
+color.diff=auto
+push.default=matching
+merge.tool=...
+```
+
+### Votre identit
+Afin de configurer correctement votre git, commençons par définir votre identité 
+
 >```
 >$ ping -c 4 host
 >```
 
 
-### 1.1. Installation de GIT
-
-You can use the [editor on GitHub](https://github.com/juanluck/Introduction-GIT-TP1/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/juanluck/Introduction-GIT-TP1/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-Ce cours d'[introduction à la gestion des versions à l'aide de GIT](#introduction_main)  est divisé en trois sessions pratiques 
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
