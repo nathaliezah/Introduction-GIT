@@ -73,13 +73,14 @@ $:> git config --global init.defaultBranch main
 ```
 -->
 
-#### Exercices configuration git : 
+### Exercices configuration git : 
 > 1. Suivez les étapes précédentes et configurez votre nom, votre adresse e-mail et votre éditeur de texte dans git. 
 2. Tapez la commande `git config --list` et assurez-vous que toutes les informations fournis sont correctes.
 3. Afin de vérifier que votre nom est correct, tapez  `git config user.name`
 4. Faire pareil pour votre email, tapez  `git config user.email`
 
 [Haut de la page](#TP1)
+
 --------
 
 ## 2. Création d'un dépôt git sur une machine locale {#gitinit}
