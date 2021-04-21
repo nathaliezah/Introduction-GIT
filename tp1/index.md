@@ -1,4 +1,5 @@
-# TP 1 : Travailler sur un répertoire local  {#TP1}
+<a id='TP1'></a>
+# TP 1 : Travailler sur un répertoire local 
 [Retour à la page principale](../index.md)
 
 Pour notre premier contact avec git, nous n'aurons besoin que d'un éditeur de texte et d'une installation fonctionnelle de git sur la console. Il ne sera pas nécessaire d'avoir un dépôt distant (comme github) parce que nous ferons tout le travail sur un répertoire locale de la machine. Dans la dernière partie de ce TP, nous commencerons à gérer un petit programme Java, il est donc également pratique d'avoir une machine virtuelle Java installée.
@@ -21,7 +22,8 @@ Le but de ce premier TP est de commencer à se familiariser avec git. Plus préc
 
 ---
 
-## 1. Configuration de GIT {#configuration}
+<a id='configuration'></a>
+## 1. Configuration de GIT 
 
 Git est livré avec un outil appelé `git config` qui vous permet d'obtenir et de définir des variables de configuration qui contrôlent tous les aspects de l'apparence et du fonctionnement de git. 
 
@@ -73,7 +75,7 @@ $:> git config --global init.defaultBranch main
 ```
 -->
 
-### Exercices configuration git : 
+### Exercices
 > 1. Suivez les étapes précédentes et configurez votre nom, votre adresse e-mail et votre éditeur de texte dans git. 
 2. Tapez la commande `git config --list` et assurez-vous que toutes les informations fournis sont correctes.
 3. Afin de vérifier que votre nom est correct, tapez  `git config user.name`
@@ -83,16 +85,20 @@ $:> git config --global init.defaultBranch main
 
 --------
 
-## 2. Création d'un dépôt git sur une machine locale {#gitinit}
+<a id='gitinit'></a>
+## 2. Création d'un dépôt git sur une machine locale
 
 Une fois git correctement configuré, nous allons procéder sans plus tarder à créer notre premier répertoire dont nous allons gérer les changements à l'aide de git. 
 
 La première chose que nous allons décider est la structure de répertoires que nous allons utiliser pour ce cours. 
 
 
+### Exercices
+> 1. 
 
+[Haut de la page](#TP1)
 
-
+--------
 
 
 
