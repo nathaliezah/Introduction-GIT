@@ -1,7 +1,7 @@
 # TP 1 : Travailler sur un répertoire local  {#TP1}
 [Retour à la page principale](../index.md)
 
-Pour notre premier contact avec git, nous n'aurons besoin que d'un éditeur de texte et d'une installation fonctionnelle de git sur la console. Dans la dernière partie de ce TP, nous commencerons à gérer un petit programme Java, il est donc également pratique d'avoir une machine virtuelle Java installée.
+Pour notre premier contact avec git, nous n'aurons besoin que d'un éditeur de texte et d'une installation fonctionnelle de git sur la console. Il ne sera pas nécessaire d'avoir un dépôt distant (comme github) parce que nous ferons tout le travail sur un répertoire locale de la machine. Dans la dernière partie de ce TP, nous commencerons à gérer un petit programme Java, il est donc également pratique d'avoir une machine virtuelle Java installée.
  
  La durée de ce travail pratique sera d'une heure à une heure et demie. 
 
@@ -45,7 +45,7 @@ merge.tool=...
 
 ### 1.1. Votre identité
 
-La première chose à faire lorsque vous installez Git est de définir votre nom d'utilisateur et votre adresse e-mail. Ceci est important car chaque commit Git utilise ces informations, et elles sont immuablement intégrées dans les commits que vous commencez à créer: 
+La première chose à faire lorsque vous installez git est de définir votre nom d'utilisateur et votre adresse e-mail. Ceci est important car chaque commit Git utilise ces informations, et elles sont immuablement intégrées dans les commits que vous commencez à créer: 
 
 ```shell
 $:> git config --global user.name "John Doe"
@@ -60,15 +60,37 @@ Maintenant que votre identité est configurée, vous pouvez configurer l'éditeu
 ```shell
 $:> git config --global core.editor XXXX
 ```
-où XXXX correspond au nom de votre éditeur de texte préféré, par exemple, vim, emacs, gedit, ... 
+où **XXXX** correspond au nom de votre éditeur de texte préféré, par exemple, vim, emacs, gedit, ... 
 
-### 1.2. Votre nom de branch par défaut
+<!--### 1.3. Votre nom de branch par défaut
 
+Par défaut, git créera une branche appelée `master` lorsque vous créez un nouveau dépôt avec `git init` (nous allons voir les branches et la création d'un dépôt plus tard). À partir de la version 2.28 de git, vous pouvez définir un nom différent pour la branche initiale.
 
+Pour définir `main` comme nom de branche par défaut, procédez comme suit : 
 
+```shell
+$:> git config --global init.defaultBranch main
+```
+-->
 
->####Exercice : 
-Tapez la commande `git config --list` et assurez-vous que toutes les informations fournis sont correctes.
+>**Exercices : **
+> 1. Suivez les étapes précédentes et configurez votre nom, votre adresse e-mail et votre éditeur de texte dans git. 
+> 2.Tapez la commande `git config --list` et assurez-vous que toutes les informations fournis sont correctes.
+> 3. Afin de vérifier que votre nom est correct, tapez  `git config user.name`
+> 4. Faire pareil pour votre email, tapez  `git config user.email`
 
 ## 2. Création d'un dépôt git sur une machine locale {#gitinit}
+
+Une fois git correctement configuré, nous allons procéder sans plus tarder à créer notre premier répertoire dont nous allons gérer les changements à l'aide de git. 
+
+
+
+
+
+
+
+
+
+
+
 
