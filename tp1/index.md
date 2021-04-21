@@ -88,17 +88,68 @@ $:> git config --global init.defaultBranch main
 <a id='gitinit'></a>
 ## 2. Création d'un dépôt git sur une machine locale
 
-Une fois git correctement configuré, nous allons procéder sans plus tarder à créer notre premier répertoire dont nous allons gérer les changements à l'aide de git. 
+Une fois git correctement configuré, nous allons procéder sans plus tarder à créer notre premier répertoire dont nous allons gérer les changements à l'aide de git. La première chose que nous allons décider est la structure de répertoires que nous allons utiliser pour ce cours. 
 
-La première chose que nous allons décider est la structure de répertoires que nous allons utiliser pour ce cours. 
+Accédez à votre répertoire de travail (quel qu'il soit) et créez un répertoire `courseGIT` puis le répertoire `tp1`, de sorte que la structure du répertoire soit la suivante: 
 
+```shell
+$:> tree courseGIT
+courseGIT/
+└── tp1
+```
+Allez jusqu'au répertoire tp1, de sorte que la commande `pwd` affiche le résultat suivant :
+
+```shell
+$:> pwd
+/.../courseGIT/tp1 
+```
+
+Tapez la commande `ls -a` et voir que le résultat est le suivant :
+
+```shell
+$:> ls -a
+. ..
+```
+
+<mark> Prêt à créer votre premier dépôt git ? </mark> **Tapez :**
+```shell
+$:> git init
+```
+Vous devriez obtenir une réponse de type :
+
+```shell
+Initialized empty Git repository in /.../courseGIT/tp1/.git/
+```
+Ce message indique que votre répertoire `tp1` sera désormais géré par git. En particulier, le répertoire `.git` (qui est caché) contiendra la base de données avec toutes les modifications que nous apportons au répertoire `tp1`. <mark> Attention : </mark> nous n'accéderons jamais directement au répertoire `.git` mais via des commandes git. Pour vérifier que le répertoire existe : 
+
+```shell
+$:> ls -a
+.  ..  .git
+```
 
 ### Exercices
-> 1. 
+> 1. Suivez les étapes précédentes et assurez-vous que le répertoire `.git` a été bien crée.
+
+**Félicitations, vous venez de créer votre premier dépôt git !!**
 
 [Haut de la page](#TP1)
 
 --------
+
+### 3. Création d'un fichier texte README.md 
+
+Nous allons créer maintenant un fichier texte README.md (au format markdown) dans le repertoire `tp1` où nous allons sauvegarder notre compte-rendu. Utilisez votre éditeur de texte préféré pour cela.
+
+
+```shell
+$:> git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+```
+
 
 
 
