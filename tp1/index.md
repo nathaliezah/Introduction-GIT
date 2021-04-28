@@ -11,12 +11,12 @@ Pour notre premier contact avec git, nous n'aurons besoin que d'un éditeur de t
 
 Le but de ce premier TP est de commencer à se familiariser avec git. Plus précisément, nous allons apprendre: 
 
->1. [Configuration de GIT](#configuration)
-2. [Création d'un dépôt git sur une machine locale](#gitinit)
-3. Création d'un fichier texte README.md au format markdown où nous allons sauvegarder notre compte-rendu
-   * Gérer les différentes modifications du fichier README.md 
-   * Différencier  3 états / 3 zones / 3 actions
-4. Gestion de version d'un programme Java 
+>1. [Configuration de GIT (`git config`)](#configuration)
+2. [Création d'un dépôt git sur une machine locale (`git init` et `git status`)](#gitinit)
+3. [Création d'un fichier texte README.md](#readme)
+   * [Gérer les différentes modifications du fichier README.md](#readmeModifications)
+   * [Différencier  3 états / 3 zones / 3 actions](#readmeEtatsZonesActions)
+4. [Gestion de version d'un programme Java](#programmeJava)
    * Cycle de vie git (status, add, commit, log, tag)
    * Creation du fichier `.gitignore`
 
@@ -47,7 +47,7 @@ merge.tool=...
 
 ### 1.1. Votre identité
 
-La première chose à faire lorsque vous installez git est de définir votre nom d'utilisateur et votre adresse e-mail. Ceci est important car chaque commit Git utilise ces informations, et elles sont immuablement intégrées dans les commits que vous commencez à créer: 
+La première chose à faire lorsque vous installez git est de définir votre nom d'utilisateur et votre adresse e-mail. Ceci est important car chaque commit git utilise ces informations, et elles sont immuablement intégrées dans les commits que vous commencez à créer: 
 
 ```shell
 $:> git config --global user.name "John Doe"
@@ -127,19 +127,10 @@ $:> ls -a
 .  ..  .git
 ```
 
-### Exercices
-> 1. Suivez les étapes précédentes et assurez-vous que le répertoire `.git` a été bien crée.
+<a id='gitstatus'></a>
+### 2.1. La commande `git status`
 
-**Félicitations, vous venez de créer votre premier dépôt git !!**
-
-[Haut de la page](#TP1)
-
---------
-
-### 3. Création d'un fichier texte README.md 
-
-Nous allons créer maintenant un fichier texte README.md (au format markdown) dans le repertoire `tp1` où nous allons sauvegarder notre compte-rendu. Utilisez votre éditeur de texte préféré pour cela.
-
+La commande `git status` nous permet de vérifier les modifications realisées aux fichiers dans la copie de travail `tp1` (_working directory_). Pour l'instant, on n'a rien modifié dans le repositoire `tp1` et la commande `git status` doit afficher le message suivante :
 
 ```shell
 $:> git status
@@ -151,9 +142,169 @@ nothing to commit (create/copy files and use "git add" to track)
 ```
 
 
+### Exercices
+> 1. Suivez les étapes précédentes et assurez-vous que le répertoire `.git` a été bien crée.
+2. Tapez la commande `git status` dans le repertoire `tp1` et vérifier qu'elle affiche bien le message montre dans la [section 2.1](#gitstatus).
+
+**Félicitations, vous venez de créer votre premier dépôt git !!**
+
+[Haut de la page](#TP1)
+
+--------
+
+<a id='readme'></a>
+### 3. Création d'un fichier texte README.md 
+
+Nous allons créer maintenant un fichier texte README.md (au format markdown) dans le repertoire `tp1` où nous allons sauvegarder un compte-rendu de ce cours. Le fichier README.md a devenu un _standard de facto_ en git et on vous encourage a créer un pour chaque projet git que vous demarrez.
+
+ Utilisez votre éditeur de texte préféré pour cela et commencez à éditer le fichier avec ces informations .:
+
+```markdown
+*Nom :* Votre nom
+*Groupe :* Votre groupe
+*Année :*
+*IUT Le Havre*
+
+## Compte-rendu TP1 Introduction GIT
+
+Dans ce TP on apprend à travailler avec git.
+```
+<mark> Assurez-vous de sauvegarder le fichier README.md avant de continuer.</mark>
+
+<a id='readmeModifications'></a>
+#### 3.1. Gérer les différentes modifications du fichier README.md
+
+Dans la [section 2.1](#gitstatus) on a appris que la commande `git status` sert à visualiser les modifications realisées aux fichiers dans la copie de travail `tp1`. Après les modifications qu'on vient de faire sur le fichier README.md, la commande doit afficher le message suivante :
+
+```shell
+$:> git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Le message "Untracked files" montre qu'on vient de modifier un fichier (README.md) dans notre copie de travail et que ce fichier n'est pas encore suivi par notre dépôt git. Pour sélectionner (_stage_) le fichier README.md, tapez :
+
+```shell
+$:> git add README.md
+```
+
+Cette commande va permettre à git de suivre les modifications de ce fichier dès maintenant. Pour voir le changement d'état du fichier README.md en git, tapez :
+
+```shell
+$:> git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   README.md
+```
+
+Vous pouvez voir que le fichier vient d'être sélectioné pour inclusion dans le dépôt git et il ne reste que valider cette inclusion. Pour cela on utilise la commande `git commit`. Tapez :
+
+```shell
+$:> git commit -m "Ajoute du fichier README.md"
+[master (root-commit) 23782d5] Ajoute du fichier README.md
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+```
+
+Maintenant le fichier README.md dans la copie de travail `tp1` (_working directory_) est synchrone avec le dépôt. On vient de sauvegarder une première version du fichier ! La commande `git status` doit nous renvoyer la sortie suivante :
+
+```shell
+$:> git status
+On branch master
+nothing to commit, working directory clean
+```
+
+**Un cycle simple to track changes in git :**
+
+1. Modification d'un fichier existant ou création d'un nouveu fichier
+2. `git status` pour voir les fichiers à inclure dans le dépôt git.
+3. `git add <fichier>` pour sélectioner le fichiers (_stage_) qu'on veux faire suivre par le dépôt git.
+4. `git commit -m "Commentaire court pour decrire le commit"`
+5. Finalement, la commande `git log` nous permet de visualizer toutes les diferents versions dans notre dépôt.
+
+<a id='readmeEtatsZonesActions'></a>
+#### 3.2. Différencier  3 états / 3 zones / 3 actions
+
+Pour mieux comprendre le fonctionnement de git, c'est interessant de distinguer la difference entre état, zone et action. Voici un petit résumé :
+
+**Dans un dépôt GIT un fichier peut avoir 3 états différents :**
+
+   * Modifié (modified): il a des modification locales, il va falloir le sélectionner (stage) pour ensuite valider (commit) ses modifications.
+   * Sélectionné (staged): ses modification ont été sélectionnées (staged) pour être validées (commited).
+   * Validé (commited): il est synchrone avec le dépôt et ne requière pas de validation.
+
+**Ces états correspondent à 3 zones dans un GIT :**
+
+   * La copie de travail (directory), c’est le système de fichier local, zone où les fichiers sont modifiés.
+   * La zone de sélection (staging area)
+   * Le dépôt où les modifications sont enregistrées sous forme de validations (commits).
+
+**Le passage entre ses 3 états se fait par 3 actions:**
+
+   * Sélection (stage) qui sélectionne les fichier pour la validation(commande : `git add`).
+   * Validation (commit) qui crée le commit et l’envoie dans le dépôt (commande: `git commit`).
+   * Récupération (checkout) qui récupère un instantané (snapshot) depuis le dépôt vers la copie de travail (commande : `git checkout`).
 
 
+### Exercice
+> 1. Pour s'assurer de qu'on a bien compris le cycle de fonctionnement de git, on va méttre à jour le fichier README.md avec un compte-rendu de ce cours jusqu'à maintenant. Assurez vous que les modifications sont sélectionés et valides dans le dépôt git.
 
+[Haut de la page](#TP1)
+
+--------
+   
+<a id='programmeJava'></a>
+### 4. Gestion de version d'un programme Java 
+   
+```java
+public class Cryptomonnaie{
+    private String nom;
+    private double valeurDeJeton ;
+
+    public Cryptomonnaie(String nom, double valeurDeJeton){
+        this.nom = nom;
+        this.valeurDeJeton = valeurDeJeton;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public double getValeurDeJeton() {
+        return valeurDeJeton;
+    }
+
+    @Override
+    public String toString() {
+        return nom+":"+valeurDeJeton;
+    }
+}
+```
+
+
+### 4.1. Cycle de vie git (status, add, commit, log, tag)
+
+
+### 4.2. Creation du fichier `.gitignore`
+
+### Exercices
+> 1. 
+
+
+[Haut de la page](#TP1)
 
 
 
