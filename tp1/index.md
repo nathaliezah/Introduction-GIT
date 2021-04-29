@@ -4,9 +4,6 @@
 
 Pour notre premier contact avec git, nous n'aurons besoin que d'un éditeur de texte et d'une installation fonctionnelle de git sur la console. Il ne sera pas nécessaire d'avoir un dépôt distant (comme github) parce que nous ferons tout le travail sur un répertoire locale de la machine. Dans la dernière partie de ce TP, nous commencerons à gérer un petit programme Java, il est donc également pratique d'avoir une machine virtuelle Java installée. Ce travail pratique suppose que nous travaillons sous linux bien qu'il ne devrait y avoir aucun problème à le faire sur d'autres plates-formes. 
  
- La durée de ce travail pratique sera d'une heure à une heure et demie. 
-
-
 ## Objectifs du TP 1
 
 Le but de ce premier TP est de commencer à se familiariser avec git. Plus précisément, nous allons apprendre: 
@@ -17,8 +14,7 @@ Le but de ce premier TP est de commencer à se familiariser avec git. Plus préc
    * [Gérer les différentes modifications du fichier README.md](#readmeModifications)
    * [Différencier  3 états / 3 zones / 3 actions](#readmeEtatsZonesActions)
 4. [Gestion de version d'un programme Java](#programmeJava)
-   * Cycle de vie git (status, add, commit, log, tag)
-   * Creation du fichier `.gitignore`
+   * [Creation du fichier `.gitignore`](#gitignore)
 
 ---
 
@@ -153,7 +149,7 @@ nothing to commit (create/copy files and use "git add" to track)
 --------
 
 <a id='readme'></a>
-### 3. Création d'un fichier texte README.md 
+## 3. Création d'un fichier texte README.md 
 
 Nous allons créer maintenant un fichier texte README.md (au format [markdown](https://www.markdownguide.org/cheat-sheet)) dans le repertoire `tp1` où nous allons enregistrer un compte-rendu de ce cours. Le fichier README.md est devenu un _standard de facto_ dans git et on vous encourage a créer un pour chaque projet git que vous démarrez.
 
@@ -165,7 +161,7 @@ Utilisez votre éditeur de texte préféré pour cela et commencez à éditer le
 *Année :*
 *IUT Le Havre*
 
-## Compte-rendu TP1 Introduction GIT
+### Compte-rendu TP1 Introduction GIT
 
 Dans ce TP on apprend à travailler avec git.
 ```
@@ -236,7 +232,7 @@ nothing to commit, working directory clean
 5. Enfin, la commande `git log` nous permet de voir toutes les différentes versions enregistrés dans notre dépôt.  Tapez `git log` pour voir le journal des différentes versions. Chaque entrée du log correspond à une version différent du fichier validée (_commit_). 
 
 <a id='readmeEtatsZonesActions'></a>
-#### 3.2. Différencier  3 états / 3 zones / 3 actions
+### 3.2. Différencier  3 états / 3 zones / 3 actions
 
 Pour mieux comprendre le fonctionnement de git, c'est interessant de distinguer la difference entre état, zone et action. Voici un petit résumé :
 
@@ -267,9 +263,9 @@ Pour mieux comprendre le fonctionnement de git, c'est interessant de distinguer 
 --------
    
 <a id='programmeJava'></a>
-### 4. Gestion de version d'un programme Java 
+## 4. Gestion de version d'un programme Java 
 
-Bien que git permette la gestion des versions de tout type de fichier (par exemple, c'est le cas du fichier texte README.md), la plupart du temps nous l'utilisons pour gérer les versions d'un programme. Dans cet exercice pratique, nous allons créer un petit projet Java sur le monde fascinant des crypto-monnaies.
+Bien que git permette la gestion des versions de tout type de fichier (par exemple, c'est le cas du fichier texte README.md), la plupart du temps nous allons l'utiliser pour gérer les versions d'un programme. Dans cet exercice pratique, nous allons créer un petit projet Java sur le monde fascinant des crypto-monnaies.
 
 Pour commencer à développer notre projet, dans le répertoire `tp1` nous allons créer un répertoire `src` qui contiendra les sources dudit projet dans lequel nous allons créer un premier fichier java vide à l'aide de la commande `touch Cryptomonnaie.java`. La structure du répertoire `tp1` doit être la suivante :
 
@@ -295,44 +291,101 @@ public class Cryptomonnaie{
 }
 ```
 
+À l'aide des commandes git que nous avons apprises, ajoutez et validez le fichier java au dépôt git avec le message `"Première version du fichier Cyptomonnaie.java"`.
+ 
+Maintenant, la commande `git log` devrait afficher des informations similaires à ce qui suit :
 
-   
-```java
-public class Cryptomonnaie{
-    private String nom;
-    private double valeurDeJeton ;
+```shell
+$:~/courseGIT/tp1> git log
+commit e6612def94728cfcb8468e5430edec6b983e5a58
+Author: author <author@example.com>
+Date:   Thu Apr 29 14:22:12 2021 +0200
 
-    public Cryptomonnaie(String nom, double valeurDeJeton){
-        this.nom = nom;
-        this.valeurDeJeton = valeurDeJeton;
-    }
+    Première version du fichier Cyptomonnaie.java
 
-    public String getNom() {
-        return nom;
-    }
+commit 23782d55677ffc4a6ad97adc45c484e9b93671a6
+Author: author <author@example.com>
+Date:   Wed Apr 28 11:52:14 2021 +0200
 
-    public double getValeurDeJeton() {
-        return valeurDeJeton;
-    }
+    Ajoute du fichier README.md
 
-    @Override
-    public String toString() {
-        return nom+":"+valeurDeJeton;
-    }
-}
 ```
 
+<a id='gitignore'></a>
+### 4.1. Creation du fichier `.gitignore`
 
-### 4.1. Cycle de vie git (status, add, commit, log, tag)
+Une fois qu'un fichier java a été créé, il est normal que nous procédions à sa compilation. Dans le répertoire `src`, compilons le fichier pour nous assurer qu'il n'y a pas d'erreurs :
+
+```shell
+$:~/courseGIT/tp1/src> javac Cryptomonnaie.java
+```
+
+Comme nous le savons, la compilation en java génère un nouveau fichier .class qui apparaîtra dans la zone de copie de travail (voir `git status` ci-dessous). 
 
 
-### 4.2. Creation du fichier `.gitignore`
+```shell
+$:~/courseGIT/tp1/src> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
 
-### Exercices
-> 1. 
+        Cryptomonnaie.class
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+```
+
+La grande question que nous pouvons nous poser est la suivante : **que devons-nous faire avec ce fichier ? devrions-nous le gérer avec git aussi ?** La réponse à cette question est **non** : normalement, nous n'enregistrerons pas les modifications apportées aux fichiers générés à partir du code disponible. En d'autres termes, si nous avons un fichier java, nous n'avons pas besoin de sauvegarder le .class respectif car il s'agit d'informations redondantes et il s'agit également d'un fichier non modifiable. Cependant, il est un peu ennuyeux de voir un fichier .class apparaître à chaque fois que nous tapons la commande `git status`. 
+
+Git offre une solution élégante à ce problème : nous pouvons générer une liste avec les types de fichiers que nous voulons que git ignore. L'emplacement de cette liste sera dans le fichier `.gitignore` que nous allons placer dans le répertoire racine de notre dépôt. 
+
+Dans le répertoire `tp1` tapez :
+ 
+```shell
+$:~/courseGIT/tp1> touch .gitignore
+```
+
+Tapez maintenant `git status` : Que se passe-t-il ? quels fichiers ne sont pas encore sélectionnés (_stage_) ? 
+
+Éditez le fichier `.gitignore` avec votre éditeur de texte préféré et ajoutez la ligne suivante : 
+
+```
+*.class
+```
+
+Puis sélectionnez et validez le fichier :
+
+```shell
+$:~/courseGIT/tp1> git add .gitignore
+$:~/courseGIT/tp1> git commit -m ".gitignore ajouté"
+```
+Et maintenant : que se passe-t-il si nous tapons `git status`? **Vous pouvez tirer vos propres conclusions.**
+
+### Exercice
+> 1. Suivez toutes les étapes précédentes de la section 4.
+2. Complétez le fichier .gitignore avec les lignes suivantes et validez-le dans git.
+
+
+```
+# Compiled class file
+*.class
+
+# Package Files 
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+```
 
 
 [Haut de la page](#TP1)
 
+----------
+
+**Fin du TP 1**
 
 

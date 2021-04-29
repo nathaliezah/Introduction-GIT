@@ -37,11 +37,30 @@ git push -u origin --tags
 # Introduction à la gestion de version à l'aide de GIT 
 ### <a id="introduction_main"></a> ###
 
-Ce cours d'[introduction à la gestion des versions à l'aide de GIT](#introduction_main)  est divisé en trois sessions pratiques 
+```java
+public class Cryptomonnaie{
+    private String nom;
+    private double valeurDeJeton ;
 
+    public Cryptomonnaie(String nom, double valeurDeJeton){
+        this.nom = nom;
+        this.valeurDeJeton = valeurDeJeton;
+    }
 
-https://pigne.org/teaching/general/lecture/Gestion-de-version-travail-en-equipe
+    public String getNom() {
+        return nom;
+    }
 
+    public double getValeurDeJeton() {
+        return valeurDeJeton;
+    }
+
+    @Override
+    public String toString() {
+        return nom+":"+valeurDeJeton;
+    }
+}
+```
 
 
 # TP1 : Iniciacion a GIT usando un repertorio local
