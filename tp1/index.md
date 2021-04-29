@@ -157,8 +157,11 @@ Utilisez votre éditeur de texte préféré pour cela et commencez à éditer le
 
 ```markdown
 *Nom :* Votre nom
+
 *Groupe :* Votre groupe
+
 *Année :*
+
 *IUT Le Havre*
 
 ### Compte-rendu TP1 Introduction GIT
