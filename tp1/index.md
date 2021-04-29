@@ -2,7 +2,7 @@
 # TP 1 : Travailler sur un répertoire local 
 [Retour à la page principale](../index.md)
 
-Pour notre premier contact avec git, nous n'aurons besoin que d'un éditeur de texte et d'une installation fonctionnelle de git sur la console. Il ne sera pas nécessaire d'avoir un dépôt distant (comme github) parce que nous ferons tout le travail sur un répertoire locale de la machine. Dans la dernière partie de ce TP, nous commencerons à gérer un petit programme Java, il est donc également pratique d'avoir une machine virtuelle Java installée.
+Pour notre premier contact avec git, nous n'aurons besoin que d'un éditeur de texte et d'une installation fonctionnelle de git sur la console. Il ne sera pas nécessaire d'avoir un dépôt distant (comme github) parce que nous ferons tout le travail sur un répertoire locale de la machine. Dans la dernière partie de ce TP, nous commencerons à gérer un petit programme Java, il est donc également pratique d'avoir une machine virtuelle Java installée. Ce travail pratique suppose que nous travaillons sous linux bien qu'il ne devrait y avoir aucun problème à le faire sur d'autres plates-formes. 
  
  La durée de ce travail pratique sera d'une heure à une heure et demie. 
 
@@ -111,7 +111,7 @@ $:> ls -a
 . ..
 ```
 
-<mark> Prêt à créer votre premier dépôt git ? </mark> **Tapez :**
+**Prêt à créer votre premier dépôt git ?** Tapez :
 ```shell
 $:> git init
 ```
@@ -120,7 +120,7 @@ Vous devriez obtenir une réponse de type :
 ```shell
 Initialized empty Git repository in /.../courseGIT/tp1/.git/
 ```
-Ce message indique que votre répertoire `tp1` sera désormais géré par git. En particulier, le répertoire `.git` (qui est caché) contiendra la base de données avec toutes les modifications que nous apportons au répertoire `tp1`. <mark> Attention : </mark> nous n'accéderons jamais directement au répertoire `.git` mais via des commandes git. Pour vérifier que le répertoire existe : 
+Ce message indique que votre répertoire `tp1` sera désormais géré par git. En particulier, le répertoire `.git` (qui est caché) contiendra la base de données avec toutes les modifications que nous apportons au répertoire `tp1`. **Attention :** nous n'accéderons jamais directement au répertoire `.git` mais via des commandes git. Pour vérifier que le répertoire existe : 
 
 ```shell
 $:> ls -a
@@ -130,7 +130,7 @@ $:> ls -a
 <a id='gitstatus'></a>
 ### 2.1. La commande `git status`
 
-La commande `git status` nous permet de vérifier les modifications realisées aux fichiers dans la copie de travail `tp1` (_working directory_). Pour l'instant, on n'a rien modifié dans le repositoire `tp1` et la commande `git status` doit afficher le message suivante :
+La commande `git status` nous permet de vérifier les modifications apportées aux fichiers dans la copie de travail `tp1` (_working directory_). Pour l'instant, on n'a rien changé dans le repositoire `tp1` et la commande `git status` devrait afficher le message suivant :
 
 ```shell
 $:> git status
@@ -155,9 +155,9 @@ nothing to commit (create/copy files and use "git add" to track)
 <a id='readme'></a>
 ### 3. Création d'un fichier texte README.md 
 
-Nous allons créer maintenant un fichier texte README.md (au format markdown) dans le repertoire `tp1` où nous allons sauvegarder un compte-rendu de ce cours. Le fichier README.md a devenu un _standard de facto_ en git et on vous encourage a créer un pour chaque projet git que vous demarrez.
+Nous allons créer maintenant un fichier texte README.md (au format [markdown](https://www.markdownguide.org/cheat-sheet)) dans le repertoire `tp1` où nous allons enregistrer un compte-rendu de ce cours. Le fichier README.md est devenu un _standard de facto_ dans git et on vous encourage a créer un pour chaque projet git que vous démarrez.
 
- Utilisez votre éditeur de texte préféré pour cela et commencez à éditer le fichier avec ces informations .:
+Utilisez votre éditeur de texte préféré pour cela et commencez à éditer le fichier avec ces informations :
 
 ```markdown
 *Nom :* Votre nom
@@ -169,12 +169,12 @@ Nous allons créer maintenant un fichier texte README.md (au format markdown) da
 
 Dans ce TP on apprend à travailler avec git.
 ```
-<mark> Assurez-vous de sauvegarder le fichier README.md avant de continuer.</mark>
+**Assurez-vous d'enregistrer le fichier README.md avant de continuer.**
 
 <a id='readmeModifications'></a>
 #### 3.1. Gérer les différentes modifications du fichier README.md
 
-Dans la [section 2.1](#gitstatus) on a appris que la commande `git status` sert à visualiser les modifications realisées aux fichiers dans la copie de travail `tp1`. Après les modifications qu'on vient de faire sur le fichier README.md, la commande doit afficher le message suivante :
+Dans la [section 2.1](#gitstatus), nous avons appris que la commande `git status` est utilisée pour afficher les modifications apportées aux fichiers dans la copie de travail `tp1`. Après les modifications que nous venons d'apporter au fichier README.md, la commande devrait afficher le message suivant :
 
 ```shell
 $:> git status
@@ -190,13 +190,13 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-Le message "Untracked files" montre qu'on vient de modifier un fichier (README.md) dans notre copie de travail et que ce fichier n'est pas encore suivi par notre dépôt git. Pour sélectionner (_stage_) le fichier README.md, tapez :
+Le message "Untracked files" montre que nous venons de modifier un fichier (README.md) dans notre copie de travail et que notre dépôt git ne suit pas encore ce fichier. Pour sélectionner (_stage_) le fichier README.md, tapez :
 
 ```shell
 $:> git add README.md
 ```
 
-Cette commande va permettre à git de suivre les modifications de ce fichier dès maintenant. Pour voir le changement d'état du fichier README.md en git, tapez :
+La commande `git add README.md` permettra à git de garder une trace des modifications apportées à ce fichier à partir de maintenant. Pour voir le changement d'état du fichier README.md dans git, tapez: 
 
 ```shell
 $:> git status
@@ -210,7 +210,7 @@ Changes to be committed:
 	new file:   README.md
 ```
 
-Vous pouvez voir que le fichier vient d'être sélectioné pour inclusion dans le dépôt git et il ne reste que valider cette inclusion. Pour cela on utilise la commande `git commit`. Tapez :
+Vous pouvez voir que le fichier vient d'être sélectioné pour être inclus dans le dépôt git et qu'il ne reste plus qu'à valider cette inclusion. Pour cela, nous utilisons la commande `git commit`. Tapez :
 
 ```shell
 $:> git commit -m "Ajoute du fichier README.md"
@@ -219,7 +219,7 @@ $:> git commit -m "Ajoute du fichier README.md"
  create mode 100644 README.md
 ```
 
-Maintenant le fichier README.md dans la copie de travail `tp1` (_working directory_) est synchrone avec le dépôt. On vient de sauvegarder une première version du fichier ! La commande `git status` doit nous renvoyer la sortie suivante :
+Maintenant, le fichier README.md dans la copie de travail `tp1` (_working directory_) est synchronisé avec le dépôt. **Nous venons d'enregistrer une première version du fichier !** La commande `git status` devrait nous donner la sortie suivante :
 
 ```shell
 $:> git status
@@ -227,13 +227,13 @@ On branch master
 nothing to commit, working directory clean
 ```
 
-**Un cycle simple to track changes in git :**
+**Important :** ce que nous venons d'apprendre est **la séquence simple pour suivre les changements d'un fichier dans git** qui comprend les étapes suivantes :
 
-1. Modification d'un fichier existant ou création d'un nouveu fichier
+1. Modification d'un fichier existant ou création d'un nouveau fichier.
 2. `git status` pour voir les fichiers à inclure dans le dépôt git.
-3. `git add <fichier>` pour sélectioner le fichiers (_stage_) qu'on veux faire suivre par le dépôt git.
-4. `git commit -m "Commentaire court pour decrire le commit"`
-5. Finalement, la commande `git log` nous permet de visualizer toutes les diferents versions dans notre dépôt.
+3. `git add <fichier>` pour sélectioner le fichier (_stage_) que nous voulons suivre dans le dépôt git.
+4. `git commit -m "Ajoutez ici un petit commentaire pour décrire ce commit"` pour valider/enregistrer les changements dans le dépôt git.
+5. Enfin, la commande `git log` nous permet de voir toutes les différentes versions enregistrés dans notre dépôt.  Tapez `git log` pour voir le journal des différentes versions. Chaque entrée du log correspond à une version différent du fichier validée (_commit_). 
 
 <a id='readmeEtatsZonesActions'></a>
 #### 3.2. Différencier  3 états / 3 zones / 3 actions
@@ -249,18 +249,18 @@ Pour mieux comprendre le fonctionnement de git, c'est interessant de distinguer 
 **Ces états correspondent à 3 zones dans un GIT :**
 
    * La copie de travail (directory), c’est le système de fichier local, zone où les fichiers sont modifiés.
-   * La zone de sélection (staging area)
+   * La zone de sélection (staging area).
    * Le dépôt où les modifications sont enregistrées sous forme de validations (commits).
 
 **Le passage entre ses 3 états se fait par 3 actions:**
 
    * Sélection (stage) qui sélectionne les fichier pour la validation(commande : `git add`).
    * Validation (commit) qui crée le commit et l’envoie dans le dépôt (commande: `git commit`).
-   * Récupération (checkout) qui récupère un instantané (snapshot) depuis le dépôt vers la copie de travail (commande : `git checkout`).
+   * Récupération (checkout) qui récupère un instantané (snapshot) depuis le dépôt vers la copie de travail (commande : `git checkout`). Nous verrons cette commande plus tard.
 
 
 ### Exercice
-> 1. Pour s'assurer de qu'on a bien compris le cycle de fonctionnement de git, on va méttre à jour le fichier README.md avec un compte-rendu de ce cours jusqu'à maintenant. Assurez vous que les modifications sont sélectionés et valides dans le dépôt git.
+> 1. Pour nous assurer que nous avons appris la séquence de fonctionnement simple de git, nous allons mettre à jour le fichier README.md avec un compte-rendu de ce cours jusqu'à présent. Assurez-vous que les modifications sont sélectionnées et valides dans le dépôt git. 
 
 [Haut de la page](#TP1)
 
@@ -268,6 +268,34 @@ Pour mieux comprendre le fonctionnement de git, c'est interessant de distinguer 
    
 <a id='programmeJava'></a>
 ### 4. Gestion de version d'un programme Java 
+
+Bien que git permette la gestion des versions de tout type de fichier (par exemple, c'est le cas du fichier texte README.md), la plupart du temps nous l'utilisons pour gérer les versions d'un programme. Dans cet exercice pratique, nous allons créer un petit projet Java sur le monde fascinant des crypto-monnaies.
+
+Pour commencer à développer notre projet, dans le répertoire `tp1` nous allons créer un répertoire `src` qui contiendra les sources dudit projet dans lequel nous allons créer un premier fichier java vide à l'aide de la commande `touch Cryptomonnaie.java`. La structure du répertoire `tp1` doit être la suivante :
+
+```shell
+$:~/courseGIT/tp1> tree
+.
+├── README.md
+└── src
+    └── Cryptomonnaie.java
+```
+
+De manière simplifiée, les principaux attributs d'une crypto-monnaie sont le nom et la valeur actuelle de son jeton (_token_). Editez le fichier Cryptomonnaie.java avec le code suivant :
+
+```java
+public class Cryptomonnaie{
+    private String nom;
+    private double valeurDeJeton ;
+
+    public Cryptomonnaie(String nom, double valeurDeJeton){
+        this.nom = nom;
+        this.valeurDeJeton = valeurDeJeton;
+    }
+}
+```
+
+
    
 ```java
 public class Cryptomonnaie{
