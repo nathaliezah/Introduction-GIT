@@ -23,10 +23,11 @@ Dans ce TP, nous allons travailler de manière autonome (il n'y a toujours pas d
 Le but de ce deuxième TP  est de commencer à travailler en autonomie (pas de travaille en équipe pour l'instant) avec un dépôt git distant. En particulier, nous travaillerons avec le système github. Dans ce TP, nous allons apprendre: 
 
 >1. [Créer un compte sur github](#github)
-   * [Pousser un dépôt existant depuis la ligne de commande](#pushremote)
-   * [Cloner un dépôt distant sur notre machine locale](#clone)
-   * [Séquence de travail avec un dépôt distant](#sequence)
-2. 
+2. [Pousser un dépôt existant depuis la ligne de commande](#pushremote)
+3. [Séquence de travail avec un dépôt distant](#sequence)
+4. [Cloner un dépôt distant sur notre machine locale](#clone)
+   
+
 
 ---
 
@@ -38,12 +39,13 @@ Peut-être que certains d'entre vous avez déjà un compte github. Si tel est le
 1. Vous devez aller sur [github](https://github.com) et cliquer sur **sign up** pour vous insrire : 
 ![Signup github](./images/signup.png)
 2. Ensuite, vous devez remplir les champs suivants du formulaire. Prenez quelques minutes pour créer votre compte. 
+
 ![Create github account](./images/createaccount.png)
 
 -----
 
 <a id='pushremote'></a>
-### 1.1. Pousser un dépôt existant depuis la ligne de commande 
+## 2. Pousser un dépôt existant depuis la ligne de commande 
 
 Jusqu'à présent, nous avons travaillé sur le dépôt git local `tp1`, il est temps de sauvegarder ce dépôt sur github. Pour ce faire, nous allons suivre une description qui montre comment le faire étape par étape. Mais tout d'abord, il est pratique de faire une brève introduction de trois commandes dans git qui nous aideront à gérer notre répertoire distant à partir de notre répertoire local sur la ligne de commande. 
 
@@ -69,7 +71,7 @@ $:> pwd
 
 ![Create empty repository github](./images/clicknewrepo.png)
 
-* Dans le formulaire, tapez **tp1** sous ****Repository name**** et laissez le reste des champs vides (comme indiqué dans l'image). Vous pouvez choisir que votre dépôt `tp1` soit public ou privé. 
+* Dans le formulaire, tapez **tp1** sous **Repository name** et laissez le reste des champs vides (comme indiqué dans l'image). Vous pouvez choisir que votre dépôt `tp1` soit public ou privé. 
 
 ![Create empty repository github](./images/createemptyrepo.png)
 
@@ -116,13 +118,26 @@ Branch master set up to track remote branch master from origin.
 ```
 * **Félicitations !!** les deux dépôts local et distant sont maintenant synchronisés. Allez sur le site de votre projet https://github.com/<votre_utilisateur>/tp1 et voir les résultats. **N'est-ce pas cool ?**
 
+
+-----
+
 <a id='sequence'></a>
-### 1.2. Séquence de travail avec un dépôt distant 
+## 2. Séquence de travail avec un dépôt distant 
 
-[enlace](../tp1/index.md#sequencelocal)
+Dans le [tp1](../tp1/index.md), nous avons vu comment établir une séquence de travail simple dans un répertoire local à l'aide de la séquence de commandes suivant : `git status` -> `git add fichier` -> `git commit -m "message"` -> `git status` -> `...`
 
+Une fois que le lien entre notre dépôt local et distant a été établi, nous allons introduire les commandes `git pull` et` git push` dans cette séquence. 
+ 
+1. Modification d'un fichier existant ou création d'un nouveau fichier.
+2. `git status` pour voir les fichiers à inclure dans le dépôt git.
+3. `git add <fichier>` pour sélectioner le fichier (_stage_) que nous voulons suivre dans le dépôt git.
+4. `git commit -m "Ajoutez ici un petit commentaire pour décrire ce commit"` pour valider/enregistrer les changements dans le dépôt git.
+5. Enfin, la commande `git log` nous permet de voir toutes les différentes versions enregistrés dans notre dépôt.  Tapez `git log` pour voir le journal des différentes versions. Chaque entrée du log correspond à une version différent du fichier validée (_commit_). 
+
+
+-----
 <a id='clone'></a>
-### 1.3. Cloner un dépôt distant sur notre machine locale 
+## 3. Cloner un dépôt distant sur notre machine locale 
 
 ```java
 public class Cryptomonnaie{
