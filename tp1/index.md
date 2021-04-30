@@ -225,7 +225,7 @@ $:> git status
 On branch master
 nothing to commit, working directory clean
 ```
-
+<a id='sequencelocal'></a>
 **Important :** ce que nous venons d'apprendre est **la séquence simple pour suivre les changements d'un fichier dans git** qui comprend les étapes suivantes :
 
 1. Modification d'un fichier existant ou création d'un nouveau fichier.
