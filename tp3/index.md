@@ -30,17 +30,18 @@ Le but de ce troisième TP  est de commencer à travailler en équipe sur github
 
 <mark style="background-color:red;font-weight:bold; color:white">Athos</mark> :
 ---
+
 : * Pour commencer, <mark style="background-color:red;font-weight:bold; color:white">Athos</mark> va créer un nouveau dépôt dans son compte github appelé `tp3` (<mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> fera bien de regarder et de commenter avec <mark style="background-color:red;font-weight:bold; color:white">Athos</mark> comment cela est fait). Nous allons remplir le formulaire de la même manière que nous l'avons fait avec le dépôt `tp2`.
 
 : * Une fois le dépôt créé, cliquez sur **Settings** :
 
 ![Settings](./images/settings.png)
 
-: * Ensuite sur **Manage access** et puis sur **Invite a collaborator** :
+: * ensuite sur **Manage access** et puis sur **Invite a collaborator** :
 
 ![Manage access](./images/inviteCollaborator.png)
 
-: * demandez à <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> son nom d'utilisateur sur github et invitez-le dans votre référentiel :
+: * demandez à <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> son nom d'utilisateur sur github et invitez-le dans votre dépôt :
 
 ![Manage access](./images/invitePorthos.png)
 
@@ -57,6 +58,7 @@ Le but de ce troisième TP  est de commencer à travailler en équipe sur github
 ```shell
 $:~/courseGIT> git clone https://github.com/<votre_utilisateur>/tp3.git
 ```
+
 : * Si vous l'avez bien fait, votre répertoire `courseGIT` devrait contenir trois répertoires comme indiqué ci-dessous :
 
 ```shell
