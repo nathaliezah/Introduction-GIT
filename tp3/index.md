@@ -29,7 +29,6 @@ Le but de ce troisième TP  est de commencer à travailler en équipe sur github
 ## 1. Inviter des collaborateurs dans un dépôt personnel
 
 <mark style="background-color:red;font-weight:bold; color:white">Athos</mark> :
----
 
 : * Pour commencer, <mark style="background-color:red;font-weight:bold; color:white">Athos</mark> va créer un nouveau dépôt dans son compte github appelé `tp3` (<mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> fera bien de regarder et de commenter avec <mark style="background-color:red;font-weight:bold; color:white">Athos</mark> comment cela est fait). Nous allons remplir le formulaire de la même manière que nous l'avons fait avec le dépôt `tp2`.
 
@@ -38,7 +37,7 @@ Le but de ce troisième TP  est de commencer à travailler en équipe sur github
 ![Settings](./images/settings.png)
 
 : * ensuite sur **Manage access** et puis sur **Invite a collaborator** :
-
+tp3/tp3/tp3/
 ![Manage access](./images/inviteCollaborator.png)
 
 : * demandez à <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> son nom d'utilisateur sur github et invitez-le dans votre dépôt :
@@ -46,12 +45,10 @@ Le but de ce troisième TP  est de commencer à travailler en équipe sur github
 ![Manage access](./images/invitePorthos.png)
 
 <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> :
----
 
 : * <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark>  doit aller dans sa boîte email pour recevoir l'invitation d'<mark style="background-color:red;font-weight:bold; color:white">Athos</mark> à collaborer dans le dépôt `tp3` et l'accepter.
 
 <mark style="background-color:red;font-weight:bold; color:white">Athos</mark>  et <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> :
----
 
 : * Chacun de vous peut faire un clone du projet en se plaçant dans le répertoire `courseGIT` :
 
