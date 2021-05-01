@@ -3,15 +3,15 @@
 [Retour à la page principale](../index.md)
 
 
-Jusqu'à présent (dans le [TP1](../tp1/index.md)), nous avons travaillé sur un dépôt local. Cependant, le vrai pouvoir de git est de pouvoir travailler avec un dépôt distant (ou plateforme de gestion de projet, généralement hébergé sur un serveur externe), ce qui présente les avantages suivants: i) avoir une copie de sauvegarde du projet, ii) possibilité d'accéder au projet depuis différentes machines et iii) possibilité de travailler en équipe sur le même projet. 
+Jusqu'à présent (dans le [TP1](../tp1/index.md)), nous avons travaillé sur un dépôt local. Cependant, le vrai pouvoir de git est de pouvoir travailler avec un dépôt distant (généralement hébergé sur un serveur externe), ce qui présente les avantages suivants: i) avoir une copie de sauvegarde du projet, ii) possibilité d'accéder au projet depuis différentes machines et iii) possibilité de travailler en équipe sur le même projet. 
 
-Dans ce TP, nous allons travailler de manière autonome (il n'y a toujours pas de travail d'équipe) sur un référentiel distant. Vous connaissez sûrement déjà certaines de ces plateformes de gestion de projet : il en existe plusieurs. **Les plus connues :**
+Dans ce TP, nous allons travailler de manière autonome (il n'y a toujours pas de travail d'équipe) sur un dépôt distant. Vous connaissez sûrement déjà certaines de ces plateformes de gestion de projets : il en existe plusieurs. **Les plus connues :**
 
 [Github](https://github.com) :
 :	La plateforme la plus connue. Héberge gratuitement des projets. Souscriptions pour plus de fonctionalités. Le code est hébergé chez github.
 
 [Bitbucket](https://bitbucket.org) : 
-:    Similaire à GitHub. Programme étudiant (avec l’email universitaire). Le code est hébergé par Atlasian.
+:    Similaire à github. Programme étudiant (avec l’email universitaire). Le code est hébergé par Atlasian.
 
 [Gitlab](https://about.gitlab.com/) :
 :    Similaire aux précédents dans sa version commerciale (Entreprise Edition). Une version open source (Community Edition) permet l’installation privée d’un serveur.
@@ -20,7 +20,7 @@ Dans ce TP, nous allons travailler de manière autonome (il n'y a toujours pas d
 
 ## Objectifs du TP 2
 
-Le but de ce deuxième TP  est de commencer à travailler en autonomie (pas de travaille en équipe pour l'instant) avec un dépôt git distant. En particulier, nous travaillerons avec le système github. Dans ce TP, nous allons apprendre: 
+Le but de ce deuxième TP  est de commencer à travailler en autonomie (pas de travaille en équipe pour l'instant) avec un dépôt git distant. En particulier, nous travaillerons avec le système github. Dans ce TP, nous allons apprendre à : 
 
 >1. [Créer un compte sur github](#github)
 2. [Pousser un dépôt existant depuis la ligne de commande](#pushremote)
@@ -28,6 +28,7 @@ Le but de ce deuxième TP  est de commencer à travailler en autonomie (pas de t
 4. [Cloner un dépôt distant sur notre machine locale](#clone)
    
 
+[Haut de la page](#TP2)
 
 ---
 
@@ -41,6 +42,8 @@ Peut-être que certains d'entre vous avez déjà un compte github. Si tel est le
 2. Ensuite, vous devez remplir les champs suivants du formulaire. Prenez quelques minutes pour créer votre compte. 
 
 ![Create github account](./images/createaccount.png)
+
+[Haut de la page](#TP2)
 
 -----
 
@@ -69,7 +72,7 @@ $:> pwd
 
 * Sur le site Web de github, allez en haut à droite et cliquez sur **New repository** comme indiqué dans l'image :
 
-![Create empty repository github](./images/clicknewrepo.png)
+![New repository github](./images/clicknewrepo.png)
 
 * Dans le formulaire, tapez **tp1** sous **Repository name** et laissez le reste des champs vides (comme indiqué dans l'image). Vous pouvez choisir que votre dépôt `tp1` soit public ou privé. 
 
@@ -102,7 +105,7 @@ $:~/courseGIT/tp1> git branch
 $:~/courseGIT/tp1> git push -u origin master
 ```
 
-* Alors que nous essayons d'écrire dans le dépôt distant, il nous sera demandé notre nom d'utilisateur et notre mot de passe github. Ecrivez-les.
+* Alors que la commande `git push` essaie d'écrire dans le dépôt distant, il nous sera demandé notre nom d'utilisateur et notre mot de passe github. Ecrivez-les :
 
 ```shell
 Username for 'https://github.com': <votre_utilisateur>
@@ -116,28 +119,49 @@ To https://github.com/juanluck/tp1.git
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ```
-* **Félicitations !!** les deux dépôts local et distant sont maintenant synchronisés. Allez sur le site de votre projet https://github.com/<votre_utilisateur>/tp1 et voir les résultats. **N'est-ce pas cool ?**
+* **Félicitations !!** les deux dépôts local et distant sont maintenant synchronisés. Allez sur le site de votre projet `https://github.com/<votre_utilisateur>/tp1` et voir les résultats. **N'est-ce pas cool ?**
 
+[Haut de la page](#TP2)
 
 -----
 
 <a id='sequence'></a>
-## 2. Séquence de travail avec un dépôt distant 
+## 3. Séquence de travail avec un dépôt distant 
 
-Dans le [tp1](../tp1/index.md), nous avons vu comment établir une séquence de travail simple dans un répertoire local à l'aide de la séquence de commandes suivant : `git status` -> `git add fichier` -> `git commit -m "message"` -> `git status` -> `...`
+Dans le [tp1](../tp1/index.md), nous avons vu comment établir une séquence de travail simple dans un répertoire local pour enregistrer la trace des différentes versions de notre projet à l'aide de la séquence de commandes suivant : `git status` -> `git add fichier` -> `git commit -m "message"` -> `git status` -> `git add fichier` -> `...`
 
-Une fois que le lien entre notre dépôt local et distant a été établi, nous allons introduire les commandes `git pull` et` git push` dans cette séquence. 
+Une fois que le lien entre notre dépôt local et distant a été établi, nous allons introduire les commandes `git pull` et` git push` dans cette séquence et ainsi pouvoir synchroniser le _commit_ local avec le dépôt distant . En bref, cette séquence se compose des commandes suivantes :
+
+
+
+* Tout d'abord, nous allons _puller_ (télécharger et synchroniser) la version la plus récente du dépôt distant vers notre dépôt local :
+
+```shell
+$:~/courseGIT/tp1> git pull
+```
+
+* **(Optionnel )** Nous pouvons voir les modifications les plus récentes (écrites par nous ou un collègue) si nous tapons :
+
+```shell
+$:~/courseGIT/tp1> git log
+```
+
+* Une fois que nous avons la version la plus récente, nous pouvons commencer à introduire des modifications dans nos fichiers locaux et effectuer la séquence que nous connaissons déjà pour enregistrer la nouvelle version dans notre référentiel local :
+
+```shell
+$:~/courseGIT/tp1> git status
+$:~/courseGIT/tp1> git add .
+$:~/courseGIT/tp1> git commit -m "Message pour le log"
+```
+
+* Finalement, une fois que notre référentiel local a la bonne version, il suffit de le synchroniser (_pusher_) avec le dépôt distant avec la commande : 
+
+```shell
+$:~/courseGIT/tp1> git push
+```
  
-1. Modification d'un fichier existant ou création d'un nouveau fichier.
-2. `git status` pour voir les fichiers à inclure dans le dépôt git.
-3. `git add <fichier>` pour sélectioner le fichier (_stage_) que nous voulons suivre dans le dépôt git.
-4. `git commit -m "Ajoutez ici un petit commentaire pour décrire ce commit"` pour valider/enregistrer les changements dans le dépôt git.
-5. Enfin, la commande `git log` nous permet de voir toutes les différentes versions enregistrés dans notre dépôt.  Tapez `git log` pour voir le journal des différentes versions. Chaque entrée du log correspond à une version différent du fichier validée (_commit_). 
-
-
------
-<a id='clone'></a>
-## 3. Cloner un dépôt distant sur notre machine locale 
+### Exercice
+>1. Modifiez le fichier Cryptomonnaie.java avec le code ci-dessous. Pour synchroniser correctement les dépôts, commencez par faire un `git pull` ->` git log`, puis modifiez le fichier pour ensuite continuez avec la sequence `git status` ->` git add Cryptomonnaie.java` -> `git commit -m" Ajout de getters et setters "` - > `git push`. Vérifiez que le référentiel github a été mis à jour. 
 
 ```java
 public class Cryptomonnaie{
@@ -163,3 +187,52 @@ public class Cryptomonnaie{
     }
 }
 ```
+
+[Haut de la page](#TP2)
+
+-----
+<a id='clone'></a>
+## 4. Cloner un dépôt distant sur notre machine locale 
+
+Dans la [section 2.](#pushremote), nous avons appris à initialiser un dépôt localement (avec `git init`) et puis à le synchroniser avec un répertoire distant. Cependant, la plupart du temps, nous allons utiliser un **mécanisme beaucoup plus simple** pour relier les deux dépôts : **le clone**. Pour apprendre ce mécanisme, nous allons créer un nouveau dépôt sur github que nous appellerons `tp2` (**au revoir tp1 !**). 
+
+* Allons directement sur github pour créer un nouveau répertoire `tp2` en suivant le formulaire ci-dessous :
+
+![Create repository tp2 in github](./images/createRepoTp2.png)
+
+
+* Vous venez de créer un nouveau dépôt `tp2`. Pour obtenir le lien pour le cloner, cliquez sur <mark style="background-color:green;color:white">Code</mark> comme indiqué dans l'image suivante :
+
+![Clone info tp2 in github](./images/cloneInfoTp2.png)
+
+* Maintenant, il suffit d'aller dans le répertoire courseGIT :
+
+```shell
+$:~/courseGIT> ls
+tp1
+```
+
+* et d'écrire la commande suivante :
+
+```shell
+$:~/courseGIT> git clone https://github.com/<votre_utilisateur>/tp2.git
+```
+
+* Si nous écrivons maintenant la commande `ls`, nous verrons qu'un nouveau répertoire `tp2` a été créé. Ce répertoire contient un dépôt local qui est déjà lié et synchronisé avec le dépôt distant sur github _(contrairement à la [section 2.](#pushremote), nous n'aurons pas besoin de configurer le lien avec `git remote` ni avec `git push -u origin master`. Si facile !.)_ 
+
+```shell
+$:~/courseGIT> ls
+tp1 tp2
+```
+### Exercices
+>1. Allez dans le répertoire `tp2` et mettez à jour tous les fichiers avec ceux du répertoire `tp1` (README.md et src/Cryptomonnaie.java) (surtout ne copiez pas le répertoire caché .git).
+2.  En utilisant [la séquence](#sequence) que nous avons apprise, synchronisez les dépôts local et distant. 
+
+
+ 
+
+[Haut de la page](#TP2)
+
+-----
+
+**Fin du TP 2**
