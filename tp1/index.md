@@ -285,7 +285,7 @@ De manière simplifiée, les principaux attributs d'une crypto-monnaie sont le n
 ```java
 public class Cryptomonnaie{
     private String nom;
-    private double valeurDeJeton ;
+    private double valeurDeJeton; // Imaginons en euros
 
     public Cryptomonnaie(String nom, double valeurDeJeton){
         this.nom = nom;

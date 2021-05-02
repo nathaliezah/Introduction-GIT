@@ -15,10 +15,10 @@ Avant de continuer, nous allons nous organiser en binômes. Si vous êtes un nom
 
 Le but de ce troisième TP  est de commencer à travailler en équipe sur github et développer un marché pour le projet de crypto-monnaie que nous avions déjà lancé. Dans ce TP, nous allons apprendre à : 
 
->1. [Inviter des collaborateurs dans un dépôt personnel ](#collaborateurs)
-2. [Pousser un dépôt existant depuis la ligne de commande](#pushremote)
-3. [Séquence de travail avec un dépôt distant](#sequence)
-4. [Cloner un dépôt distant sur notre machine locale](#clone)
+>1. [Inviter des collaborateurs dans un dépôt personnel](#collaborateurs)
+2. [Développement d'un projet java en équipe](#projet)
+3. [Gérer les nouvelles fonctionnalités à l'aide des branches](#branch)
+
    
 
 [Haut de la page](#TP3)
@@ -53,7 +53,7 @@ tp3/tp3/tp3/
 : * Chacun de vous peut faire un clone du projet en se plaçant dans le répertoire `courseGIT` :
 
 ```shell
-$:~/courseGIT> git clone https://github.com/<votre_utilisateur>/tp3.git
+$:~/courseGIT> git clone https://github.com/<utilisateur_de_athos>/tp3.git
 ```
 
 : * Si vous l'avez bien fait, votre répertoire `courseGIT` devrait contenir trois répertoires comme indiqué ci-dessous :
@@ -71,3 +71,20 @@ tp1 tp2 tp3
 [Haut de la page](#TP3)
 
 -----
+
+<a id='projet'></a>
+## 2. Développement d'un projet java en équipe
+
+[Haut de la page](#TP3)
+
+-----
+
+
+<a id='branch'></a>
+## 3. Gérer les nouvelles fonctionnalités à l'aide des branches
+
+[Haut de la page](#TP3)
+
+-----
+
+**Fin du TP 3**

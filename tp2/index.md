@@ -166,7 +166,7 @@ $:~/courseGIT/tp1> git push
 ```java
 public class Cryptomonnaie{
     private String nom;
-    private double valeurDeJeton ;
+    private double valeurDeJeton; // Imaginons en euros
 
     public Cryptomonnaie(String nom, double valeurDeJeton){
         this.nom = nom;
@@ -183,7 +183,7 @@ public class Cryptomonnaie{
 
     @Override
     public String toString() {
-        return nom+":"+valeurDeJeton;
+        return String.format("%5s",nom) + ":" + String.format("%10.1f",valeurDeJeton);
     }
 }
 ```
