@@ -17,7 +17,7 @@ Le but de ce troisième TP  est de commencer à travailler en équipe sur github
 
 >1. [Inviter des collaborateurs dans un dépôt personnel](#collaborateurs)
 2. [Développement d'un projet java en équipe](#projet)
-3. [Gérer les nouvelles fonctionnalités à l'aide des branches](#branch)
+3. [Gérer des nouvelles fonctionnalités à l'aide des branches](#branch)
 
    
 
@@ -75,13 +75,128 @@ tp1 tp2 tp3
 <a id='projet'></a>
 ## 2. Développement d'un projet java en équipe
 
+Git a été principalement conçu pour gérer le travail en équipe. Revenons au projet Crypto-monnaie pour lequel nous allons créer un marché avec différents portefeuilles. Avant de commencer, décrivons certains concepts :
+
+**Portefeuille :**
+: Un portefeuille cryptographique est un portefeuille virtuel dans lequel un utilisateur peut stocker un certain nombre de jetons d'une crypto-monnaie. Cet utilisateur peut posséder plusieurs portefeuilles, mais chaque portefeuille ne peut contenir qu'un seul type de crypto-monnaie. Un portefeuille permet des achats de jetons ainsi qu'un transfert de jetons entre portefeuilles si le type de crypto-monnaie est le même. 
+
+**Marché :**
+: Le marché est un registre avec une série de portefeuilles cryptographiques. En principe, le marché nous permet de poser certaines questions telles que quel est le capital total d'un utilisateur avec plusieurs portefeuilles ou quel est le capital total en circulation d'une crypto-monnaie spécifique.
+
+<mark style="background-color:red;font-weight:bold; color:white">Athos</mark>  et <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> :
+
+: * Avant de continuer, assurez-vous que votre dépôt `tp3` est parfaitement synchronisé.
+
+<mark style="background-color:red;font-weight:bold; color:white">Athos</mark> :
+
+: * Copiez les fichiers suivants dans le répertoire `tp3/src`, validez-les dans le dépôt local et distant :
+   * [CryptoMarche.java](./src/CryptoMarche.java)
+   * [Portefeuille.java](./src/Portefeuille.java)
+   * [TestCryptoMarche.java](./src/TestCryptoMarche.java) 
+   
+<mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> :
+: * Assurez-vous d'obtenir la dernière version du dépôt distant. 
+
+<mark style="background-color:red;font-weight:bold; color:white">Athos</mark>  et <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> :
+
+: * Votre mission sera de compléter la fonctionnalité qui manque pour compléter notre application de marché de crypto-monnaie. <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> se concentrera sur l'implementation de la classe **Portefeuille.java** et <mark style="background-color:red;font-weight:bold; color:white">Athos</mark> sur l'implementation de la classe **CryptoMarche.java**. **L'objectif est de faire passer les tests décrits dans le fichier TestCryptoMarche.java (il n'est pas permis de modifier ce fichier).**
+* Avant de continuer, compilez tout le code et assurez-vous qu'il n'y a pas d'erreurs de compilation. 
+* Exécutez en ligne de commande `java TestCryptoMarche`. La réponse devrait être la suivante :
+
+```shell
+Test Portefeuille transfertDevise        ... FAIL
+Test Portefeuille achatDevise            ... FAIL
+Test CryptoMarche capitalEnEuros         ... FAIL
+Test CryptoMarche capitalMonneaie        ... FAIL
+```
+
+<mark style="background-color:red;font-weight:bold; color:white">Athos</mark> :
+
+: * Votre tâche consiste à terminer l'implémentation des deux fonctions suivantes de la classe **CryptoMarche.java**. Suivez la spécification dans le javadoc pour les compléter. Une fois terminé, synchronisez vos modifications avec le dépôt local et distant. 
+
+```java
+    /**
+     * Cette fonction recherche sur le marché tous les portefeuilles 
+     * du propriétaire et calcule son capital en euros. 
+     * @param proprietare
+     * @return capital en euros du propriétare.
+     */
+    public double capitalEnEuros(String proprietaire){
+        /**
+			FONCTION À IMPLEMENTER
+        **/
+        return 0;
+    }
+
+    /**
+     * Cette fonction recherche sur le marché tous les portefeuilles 
+     * d'un type de devise et calcule le volume total de capital de 
+     * cette devise sur le marché 
+     * @param monnaie
+     * @return capital total en circulation de la cryptomonnaie (en euros).
+     */
+    public double capitalMonneaie(Cryptomonnaie monnaie){
+        /**
+			FONCTION À IMPLEMENTER
+        **/
+        return 0;
+    }
+```
+
+
+ <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> :
+
+ : * Votre tâche consiste à terminer l'implémentation des deux fonctions suivantes de la classe **Portefeuille.java**. Suivez la spécification dans le javadoc pour les compléter. Une fois terminé, synchronisez vos modifications avec le dépôt local et distant. 
+ 
+```java
+  /**
+   * Cette fonction vous permet de transférer des devises du portefeuille actuel 
+   * vers le portefeuille de destination pour le montant indiqué. Le type de devise 
+   * (nom du Jeton) doit être le même entre les deux portefeuilles et le montant 
+   * du portefeuille actuel doit être supérieur ou égal à celui indiqué.
+   * @param destination 
+   * @param montantJetons
+   * @return true si la transaction a été effectuée, false sinon.  
+   */
+  public boolean transfertDevise (Portefeuille destination, double montantJetons){
+      /**
+           FONCTION À IMPLEMENTER
+	  **/
+      return false;
+  }
+
+  /**
+   * Cette fonction vous permet d'acheter des jetons de la 
+   * crypto-devise en fonction de leur valeur en euros. 
+   * Le résultat est l'augmentation des jetons de la crypto-monnaie.
+   * @param montantEuros Valeur d'achat en euros 
+   * @return true si le montant en euros est supérieur ou égal à 0 
+   */
+  public boolean achatDevise (double montantEuros){
+	/**
+           FONCTION À IMPLEMENTER
+	**/
+    return false;
+  }
+```
+
+### Exercice
+>1. Réalisez les étapes précédentes. Une fois les dépôts synchronisés, <mark style="background-color:red;font-weight:bold; color:white">Athos</mark> et <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> doivent compiler et lancer le test `java TestCryptoMarche`. Le résultat doit être le suivant :
+
+```shell
+Test Portefeuille transfertDevise        ... OK
+Test Portefeuille achatDevise            ... OK
+Test CryptoMarche capitalEnEuros         ... OK
+Test CryptoMarche capitalMonneaie        ... OK
+``` 
+
 [Haut de la page](#TP3)
 
 -----
 
 
 <a id='branch'></a>
-## 3. Gérer les nouvelles fonctionnalités à l'aide des branches
+## 3. Gérer des nouvelles fonctionnalités à l'aide des branches
 
 [Haut de la page](#TP3)
 
