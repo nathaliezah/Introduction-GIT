@@ -198,6 +198,144 @@ Test CryptoMarche capitalMonneaie        ... OK
 <a id='branch'></a>
 ## 3. Gérer des nouvelles fonctionnalités à l'aide des branches
 
+Après avoir lancé le projet commun de marché de la crypto-monnaie, <mark style="background-color:red;font-weight:bold; color:white">Athos</mark>  et <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> décident de s'attaquer à de nouveaux projets séparément. En particulier, chacun d'eux décide de lancer sa propre crypto-monnaie, respectivement : la **AthosCoin** et la **PorthosCoin**.  Afin d'intégrer ces devises dans le marché existant, nous allons utiliser **le concept de branches git.** 
+
+Jusqu'à présent, sans avoir besoin de le savoir, toutes les modifications que nous avons apportées au dépôot, nous l'avons fait sur une branche principale appelée **main** ou **master** (le nom dépend des paramètres de configuration ). Si vous tapez `git branch`, vous obtiendrez ce nom. Cependant, si vous souhaitez créer une nouvelle fonctionnalité dans votre code (pas forcément une fonctionnalité principale, mais une fonctionnalité supplémentaire), git vous permet de créer une nouvelle branche : une fourchette dans la séquence des changements. 
+
+### 3.1. Tester le concept de branche avec un exemple simple 
+
+<mark style="background-color:red;font-weight:bold; color:white">Athos</mark>  et <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> :
+
+: * Imaginons que nous voulions tester une nouvelle fonctionnalité dans notre projet que nous appellerons **"test"**. Cette fonctionnalité peut être intégrée directement dans la branche principale **main** (comme nous l'avons fait jusqu'à présent) ou nous pouvons la tester dans une branche séparée, vérifier si cela fonctionne puis l'intégrer dans la branche principale. Essayons ce deuxième cas.
+
+: * Commençons par lister toutes les branches actuelles de notre dépôt avec `git branch` puis voyons le contenu de cette branche :
+
+```shell
+$:~/courseGIT/tp3> git branch
+* main
+$:~/courseGIT/tp3> tree
+.
+├── README.md
+└── src
+    ├── CryptoMarche.java
+    ├── Cryptomonnaie.java
+    ├── Portefeuille.java
+    └── TestCryptoMarche.java
+```
+
+: * Avec l'aide de `git log`, nous pouvons également voir toutes les modifications que nous avons apportées jusqu'à présent. Passons certains paramètres à la commande pour la rendre plus belle. 
+
+```shell
+$:~/courseGIT/tp3> git log --graph --oneline --all --decorate --topo-order
+* 922b42b (HEAD -> main) Adding CryptoMarche
+* 177514f (origin/main, origin/HEAD) Starting tp3++
+* e7820d8 Starting tp3
+* 455453c Initial commit
+```
+
+: * Il est temps de créer une nouvelle branche que nous appellerons **test**. Utilisez la commande suivante : 
+
+```shell
+$:~/courseGIT/tp3> git checkout -b test
+Switched to a new branch 'test'
+```
+: * L'option `-b` nous permet de dire à `checkout` que nous allons créer cette nouvelle branche. `checkout` nous fait changer de branche et aller dans la branche **test** (toutes les modifications apportées à partir de maintenant ne modifieront pas la branche **main** mais la branche **test**).  Pour nous assurer que nous sommes dans la branche **test**, tapez : 
+
+```shell
+$:~/courseGIT/tp3> git branch
+  main
+* test
+```
+: * L'étoile * indique qu'il s'agit de la branche de travail actuelle. Si nous voulons basculer entre les branches, nous pouvons utiliser la commande `git checkout <nom_branche>`. 
+
+: * Commençons par créer un nouveau fichier "test.txt" dans la branche **test**. Pour cela tapez :
+
+```shell
+$:~/courseGIT/tp3> touch test.txt
+$:~/courseGIT/tp3> ls
+README.md  src  test.txt
+```
+: * Et puis validons ces changements dans le référentiel local : 
+
+```shell
+$:~/courseGIT/tp3> git add test.txt
+$:~/courseGIT/tp3> git commit -m "fonction de test ajoutée "
+```
+: * Oublions un instant la branche **test** et revenons à la branche principale **main**, puis tapez la commande `ls`: 
+
+```shell
+$:~/courseGIT/tp3> git checkout main
+$:~/courseGIT/tp3> ls
+README.md  src
+```
+**Que se passe-t-il? Où est passé le fichier _test.txt_ ?**
+
+: * Imaginez que nous suivions le développement au sein de la branche principale. Pour simuler cela, modifiez le fichier README.md en ajoutant la ligne: "Nous avons maintenant créé une nouvelle branche de test". Effectuer un `git add README.md` puis un `git commit -m "nouveau commit sur la branche principale"`. Tapez la commande :
+
+```shell
+$:~/courseGIT/tp3> git log --graph --oneline --all --decorate --topo-order
+* f721aae (HEAD -> main) nouveau commit sur la branche principale
+| * bee45b2 (test) fonction de test ajoutée
+|/  
+* 922b42b Adding CryptoMarche
+```
+
+: * Vous pouvez voir dans la sortie du log qu'une fourchette dans le code vient d'être produite.  Visuellement, il y a maintenant une branche principale et une branche de test :
+
+```shell
+* (main)
+| * (test) 
+|/ 
+* (main)
+```
+
+### 3.2. Fusionner la branche de test dans la branche principale 
+
+<mark style="background-color:red;font-weight:bold; color:white">Athos</mark>  et <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> :
+
+: * Travailler avec des branches serait inutile si à un certain moment on ne pouvait pas les fusionner. Imaginons que nous voulions ajouter la fonctionnalité **test** à notre branche principale. Pour ce faire, allons dans la branche principale :
+
+```shell
+$:~/courseGIT/tp3> git chechout main
+```
+
+: * puis nous utiliserons la commande `git merge` qui nous permet de fusionner des branches :
+
+```shell
+$:~/courseGIT/tp3> git merge test
+```
+
+: * pour visualiser la fusion, vous pouvez écrire la commande :
+
+
+```shell
+$:~/courseGIT/tp3> git log --graph --oneline --all --decorate --topo-order
+*   454d00d (HEAD -> main) Merge branch 'test' into main
+|\  
+| * bee45b2 (test) fonction de test ajoutée
+* | f721aae nouveau commit sur la branche principale
+|/  
+* 922b42b Adding CryptoMarche
+```
+: * **Que se passe-t-il si nous écrivons ?** : 
+
+```shell
+$:~/courseGIT/tp3> ls
+README.md  src  test.txt
+```
+
+### Exercices
+>1. <mark style="background-color:red;font-weight:bold; color:white">Athos</mark>  et <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> faire les sections 3.1 et 3.2 séparément sans synchronisation avec le dépot github.
+2. Supprimez le fichier test.txt du dépôt, pour cela, écrivez la commande `git rm test.txt` puis` git commit -m" test.txt supprimé"`.
+3. Chacun de vous va créer une branche appelée **AthosCoin** et **PorthosCoin** respectivement. Dans cette branche, vous allez créer votre crypto-monnaie (suivez l'exemple d'AramisCoin ci-dessous). Une fois la devise créée, fusionnez la branche avec la branche principale. Assurez-vous ensuite que les modifications sont synchronisées dans le dépôt github. 
+
+```java
+public class AramisCoin extends Cryptomonnaie{
+    public AramisCoin(){
+        super("ARA", 1000);
+    }
+}
+```
 [Haut de la page](#TP3)
 
 -----
