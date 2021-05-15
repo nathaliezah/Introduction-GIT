@@ -88,7 +88,7 @@ $:> pwd
 $:~/courseGIT/tp1> git remote -v
 ```
 
-* Maintenant, nous allons lier notre dépôt local `tp1` au répertoire distant `https://github.com/<votre_utilisateur>/ tp1.git` pour ce faire, écrivez la commande suivante en remplaçant `<votre_utilisateur>` par votre utilisateur. 
+* Maintenant, nous allons lier notre dépôt local `tp1` au répertoire distant `https://github.com/<votre_utilisateur>/tp1.git` pour ce faire, écrivez la commande suivante en remplaçant `<votre_utilisateur>` par votre utilisateur. 
 
 ```shell
 $:~/courseGIT/tp1> git remote add origin https://github.com/<votre_utilisateur>/tp1.git
@@ -99,7 +99,7 @@ $:~/courseGIT/tp1> git remote add origin https://github.com/<votre_utilisateur>/
 $:~/courseGIT/tp1> git branch
 *master
 ```
-* Il ne reste plus qu'à créer le lien de manière permanente et mettre à jour le référentiel distant. Pour ce faire, écrivons la commande suivante: 
+* Il ne reste plus qu'à créer le lien de manière permanente et mettre à jour le dépôt distant. Pour ce faire, écrivons la commande suivante: 
 
 ```shell
 $:~/courseGIT/tp1> git push -u origin master
@@ -119,7 +119,7 @@ To https://github.com/juanluck/tp1.git
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ```
-* **Félicitations !!** les deux dépôts local et distant sont maintenant synchronisés. Allez sur le site de votre projet `https://github.com/<votre_utilisateur>/tp1` et voir les résultats. **N'est-ce pas cool ?**
+* **Félicitations !!** les deux dépôts, local et distant, sont maintenant synchronisés. Allez sur le site de votre projet `https://github.com/<votre_utilisateur>/tp1` et voir les résultats. **N'est-ce pas cool ?**
 
 [Haut de la page](#TP2)
 

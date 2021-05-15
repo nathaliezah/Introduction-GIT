@@ -37,7 +37,7 @@ Le but de ce troisième TP  est de commencer à travailler en équipe sur github
 ![Settings](./images/settings.png)
 
 : * ensuite sur **Manage access** et puis sur **Invite a collaborator** :
-tp3/tp3/tp3/
+
 ![Manage access](./images/inviteCollaborator.png)
 
 : * demandez à <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> son nom d'utilisateur sur github et invitez-le dans votre dépôt :
@@ -56,7 +56,7 @@ tp3/tp3/tp3/
 $:~/courseGIT> git clone https://github.com/<utilisateur_de_athos>/tp3.git
 ```
 
-: * Si vous l'avez bien fait, votre répertoire `courseGIT` devrait contenir trois répertoires comme indiqué ci-dessous :
+* Si vous l'avez bien fait, votre répertoire `courseGIT` devrait contenir trois répertoires comme indiqué ci-dessous :
 
 ```shell
 $:~/courseGIT> ls
@@ -112,7 +112,7 @@ Test CryptoMarche capitalMonneaie        ... FAIL
 
 <mark style="background-color:red;font-weight:bold; color:white">Athos</mark> :
 
-: * Votre tâche consiste à terminer l'implémentation des deux fonctions suivantes de la classe **CryptoMarche.java**. Suivez la spécification dans le javadoc pour les compléter. Une fois terminé, synchronisez vos modifications avec le dépôt local et distant. 
+: * Votre tâche consiste à terminer l'implémentation des deux fonctions suivantes de la classe **CryptoMarche.java**. Suivez la spécification dans les commentaires pour les compléter. Une fois terminé, synchronisez vos modifications avec le dépôt local et distant. 
 
 ```java
     /**
@@ -146,7 +146,7 @@ Test CryptoMarche capitalMonneaie        ... FAIL
 
  <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> :
 
- : * Votre tâche consiste à terminer l'implémentation des deux fonctions suivantes de la classe **Portefeuille.java**. Suivez la spécification dans le javadoc pour les compléter. Une fois terminé, synchronisez vos modifications avec le dépôt local et distant. 
+ : * Votre tâche consiste à terminer l'implémentation des deux fonctions suivantes de la classe **Portefeuille.java**. Suivez la spécification dans les commentaires pour les compléter. Une fois terminé, synchronisez vos modifications avec le dépôt local et distant. 
  
 ```java
   /**
@@ -223,7 +223,7 @@ $:~/courseGIT/tp3> tree
     └── TestCryptoMarche.java
 ```
 
-: * Avec l'aide de `git log`, nous pouvons également voir toutes les modifications que nous avons apportées jusqu'à présent. Passons certains paramètres à la commande pour la rendre plus belle. 
+* À l'aide de `git log`, nous pouvons également voir toutes les modifications que nous avons apportées jusqu'à présent. Passons certains paramètres à la commande pour la rendre plus lisible. 
 
 ```shell
 $:~/courseGIT/tp3> git log --graph --oneline --all --decorate --topo-order
@@ -233,35 +233,35 @@ $:~/courseGIT/tp3> git log --graph --oneline --all --decorate --topo-order
 * 455453c Initial commit
 ```
 
-: * Il est temps de créer une nouvelle branche que nous appellerons **test**. Utilisez la commande suivante : 
+* Il est temps de créer une nouvelle branche que nous appellerons **test**. Utilisez la commande suivante : 
 
 ```shell
 $:~/courseGIT/tp3> git checkout -b test
 Switched to a new branch 'test'
 ```
-: * L'option `-b` nous permet de dire à `checkout` que nous allons créer cette nouvelle branche. `checkout` nous fait changer de branche et aller dans la branche **test** (toutes les modifications apportées à partir de maintenant ne modifieront pas la branche **main** mais la branche **test**).  Pour nous assurer que nous sommes dans la branche **test**, tapez : 
+* L'option `-b` nous permet de dire à `checkout` que nous allons créer cette nouvelle branche. `checkout` nous fait changer de branche et aller dans la branche **test** (toutes les modifications apportées à partir de maintenant ne modifieront pas la branche **main** mais la branche **test**).  Pour nous assurer que nous sommes dans la branche **test**, tapez : 
 
 ```shell
 $:~/courseGIT/tp3> git branch
   main
 * test
 ```
-: * L'étoile * indique qu'il s'agit de la branche de travail actuelle. Si nous voulons basculer entre les branches, nous pouvons utiliser la commande `git checkout <nom_branche>`. 
+* L'étoile * indique qu'il s'agit de la branche de travail actuelle. Si nous voulons basculer entre les branches, nous pouvons utiliser la commande `git checkout <nom_branche>`. 
 
-: * Commençons par créer un nouveau fichier "test.txt" dans la branche **test**. Pour cela tapez :
+* Commençons par créer un nouveau fichier "test.txt" dans la branche **test**. Pour cela tapez :
 
 ```shell
 $:~/courseGIT/tp3> touch test.txt
 $:~/courseGIT/tp3> ls
 README.md  src  test.txt
 ```
-: * Et puis validons ces changements dans le référentiel local : 
+* Et puis validons ces changements dans le dépôt local : 
 
 ```shell
 $:~/courseGIT/tp3> git add test.txt
 $:~/courseGIT/tp3> git commit -m "fonction de test ajoutée "
 ```
-: * Oublions un instant la branche **test** et revenons à la branche principale **main**, puis tapez la commande `ls`: 
+* Oublions un instant la branche **test** et revenons à la branche principale **main**, puis tapez la commande `ls`: 
 
 ```shell
 $:~/courseGIT/tp3> git checkout main
@@ -280,7 +280,7 @@ $:~/courseGIT/tp3> git log --graph --oneline --all --decorate --topo-order
 * 922b42b Adding CryptoMarche
 ```
 
-: * Vous pouvez voir dans la sortie du log qu'une fourchette dans le code vient d'être produite.  Visuellement, il y a maintenant une branche principale et une branche de test :
+* Vous pouvez voir dans la sortie du log qu'une fourchette dans le code vient d'être produite.  Visuellement, il y a maintenant une branche principale et une branche de test :
 
 ```shell
 * (main)
@@ -296,16 +296,16 @@ $:~/courseGIT/tp3> git log --graph --oneline --all --decorate --topo-order
 : * Travailler avec des branches serait inutile si à un certain moment on ne pouvait pas les fusionner. Imaginons que nous voulions ajouter la fonctionnalité **test** à notre branche principale. Pour ce faire, allons dans la branche principale :
 
 ```shell
-$:~/courseGIT/tp3> git chechout main
+$:~/courseGIT/tp3> git checkout main
 ```
 
-: * puis nous utiliserons la commande `git merge` qui nous permet de fusionner des branches :
+* puis nous utiliserons la commande `git merge` qui nous permet de fusionner des branches :
 
 ```shell
 $:~/courseGIT/tp3> git merge test
 ```
 
-: * pour visualiser la fusion, vous pouvez écrire la commande :
+* pour visualiser la fusion, vous pouvez écrire la commande :
 
 
 ```shell
@@ -317,16 +317,16 @@ $:~/courseGIT/tp3> git log --graph --oneline --all --decorate --topo-order
 |/  
 * 922b42b Adding CryptoMarche
 ```
-: * **Que se passe-t-il si nous écrivons ?** : 
+* **Que se passe-t-il si nous tapons la commande `ls` ?** : 
 
 ```shell
 $:~/courseGIT/tp3> ls
-README.md  src  test.txt
+???
 ```
 
 ### Exercices
 >1. <mark style="background-color:red;font-weight:bold; color:white">Athos</mark>  et <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> faire les sections 3.1 et 3.2 séparément sans synchronisation avec le dépot github.
-2. Supprimez le fichier test.txt du dépôt, pour cela, écrivez la commande `git rm test.txt` puis` git commit -m" test.txt supprimé"`.
+2. Ensuite, supprimez le fichier test.txt du dépôt, pour cela, écrivez la commande `git rm test.txt` puis` git commit -m "test.txt supprimé"`.
 3. Chacun de vous va créer une branche appelée **AthosCoin** et **PorthosCoin** respectivement. Dans cette branche, vous allez créer votre crypto-monnaie (suivez l'exemple d'AramisCoin ci-dessous). Une fois la devise créée, fusionnez la branche avec la branche principale. Assurez-vous ensuite que les modifications sont synchronisées dans le dépôt github. 
 
 ```java

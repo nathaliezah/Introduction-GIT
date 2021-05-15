@@ -156,13 +156,13 @@ Nous allons créer maintenant un fichier texte README.md (au format [markdown](h
 Utilisez votre éditeur de texte préféré pour cela et commencez à éditer le fichier avec ces informations :
 
 ```markdown
-*Nom :* Votre nom
+**Nom :** Votre nom
 
-*Groupe :* Votre groupe
+**Groupe :** Votre groupe
 
-*Année :*
+**Année :**
 
-*IUT Le Havre*
+**IUT Le Havre - Cours GIT**
 
 ### Compte-rendu TP1 Introduction GIT
 
@@ -364,7 +364,7 @@ $:~/courseGIT/tp1> git commit -m ".gitignore ajouté"
 ```
 Et maintenant : que se passe-t-il si nous tapons `git status`? **Vous pouvez tirer vos propres conclusions.**
 
-### Exercice
+### Exercices
 > 1. Suivez toutes les étapes précédentes de la section 4.
 2. Complétez le fichier .gitignore avec les lignes suivantes et validez-le dans git.
 
