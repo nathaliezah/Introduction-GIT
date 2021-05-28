@@ -2,7 +2,7 @@
 
 <mark style="background-color:yellow;text-align:center">
 	<b>
-	Prenez 10 minutes à lire ce introduction
+	Prenez 10 minutes à lire ce introduction.
 	</b>
 </mark>
 
