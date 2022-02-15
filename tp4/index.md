@@ -129,7 +129,9 @@ $ git push
 * **Félicitations !!** Vous venez de résoudre un conflit dans git. Bien que git dispose encore de nombreux outils plus avancés pour gérer le flux de travail, vous disposez déjà de tous les outils pour utiliser git pour le travail d'équipe. 
 
 <div class="note">
-	<strong>NOTE : </strong> Lorsque vous aurez un peu plus d'expérience, vous verrez à quel point le clonage d'un dépôt distant est la méthode de travail la plus courante et la plus simple. Dans cet exercice, nous reproduisons ce workflow. 
+	<p><strong>NOTE : </strong> Git dispose d'outils graphiques, tels que meld, qui nous aident à résoudre ces conflits de manière plus visuelle. Cela nécessite de configurer git avec ces outils spécifiques et nous n'entrerons pas dans ces détails. Si vous souhaitez plus d'informations à ce sujet, vous pouvez visiter, par exemple, <a href="https://stackoverflow.com/questions/34119866/setting-up-and-using-meld-as-your-git-difftool-and-mergetool">ce fil de discussion.</a> </p>
+	
+<p>	De même, les IDE disposent d'aides visuelles pour gérer à la fois les conflits et le workflow git. Dans cette introduction à GIT, nous étudions simplement les outils de base. L'adaptation aux outils visuels est facile lorsque les concepts de base sont bien compris. </p>
 </div>
 
 
