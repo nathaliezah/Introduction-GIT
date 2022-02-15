@@ -53,7 +53,7 @@ Le but de ce troisième TP  est de commencer à travailler en équipe sur github
 : * Chacun de vous peut faire un clone du projet en se plaçant dans le répertoire `courseGIT` :
 
 ```shell
-$:~/courseGIT> git clone https://github.com/<utilisateur_de_athos>/tp3.git
+$:~/courseGIT> git clone git@github.com:<utilisateur_de_athos>/tp3.git
 ```
 
 * Si vous l'avez bien fait, votre répertoire `courseGIT` devrait contenir trois répertoires comme indiqué ci-dessous :
@@ -200,7 +200,7 @@ Test CryptoMarche capitalMonneaie        ... OK
 
 Après avoir lancé le projet commun de marché de la crypto-monnaie, <mark style="background-color:red;font-weight:bold; color:white">Athos</mark>  et <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> décident de s'attaquer à de nouveaux projets séparément. En particulier, chacun d'eux décide de lancer sa propre crypto-monnaie, respectivement : la **AthosCoin** et la **PorthosCoin**.  Afin d'intégrer ces devises dans le marché existant, nous allons utiliser **le concept de branches git.** 
 
-Jusqu'à présent, sans avoir besoin de le savoir, toutes les modifications que nous avons apportées au dépôot, nous l'avons fait sur une branche principale appelée **main** ou **master** (le nom dépend des paramètres de configuration ). Si vous tapez `git branch`, vous obtiendrez ce nom. Cependant, si vous souhaitez créer une nouvelle fonctionnalité dans votre code (pas forcément une fonctionnalité principale, mais une fonctionnalité supplémentaire), git vous permet de créer une nouvelle branche : une fourchette dans la séquence des changements. 
+Jusqu'à présent, sans avoir besoin de le savoir, toutes les modifications que nous avons apportées au dépôt, nous l'avons fait sur une branche principale appelée **main** ou **master** (le nom dépend des paramètres de configuration ). Si vous tapez `git branch`, vous obtiendrez ce nom. Cependant, si vous souhaitez créer une nouvelle fonctionnalité dans votre code (pas forcément une fonctionnalité principale, mais une fonctionnalité supplémentaire), git vous permet de créer une nouvelle branche : une fourchette dans la séquence des changements. 
 
 ### 3.1. Tester le concept de branche avec un exemple simple 
 
