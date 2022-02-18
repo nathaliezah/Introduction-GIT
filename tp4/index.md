@@ -158,7 +158,7 @@ En quelques mots, une pull request consiste à faire une copie d'un réferentiel
 Nous vous proposons ici un exercice pour faire une pull request. 
  
 ### Exercice
->1. Allez sur le site https://github.com/juanluck/test-pull-request-2022 et faites une `pull request` en suivant les instructions décrites dans le fichier **README.md**  
+>1. Allez sur [ce site](https://github.com/juanluck/test-pull-request-2022) et faites une `pull request` en suivant les instructions décrites dans le fichier **README.md**  
 
 [Haut de la page](#TP4)
 
