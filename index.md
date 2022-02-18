@@ -28,11 +28,12 @@ Plus précisément, nous aurons besoin de :
 
 ## Travaux pratiques 
 
-Ce cours d'[introduction à la gestion des versions à l'aide de GIT](#introduction_main)  est divisé en trois séances pratiques :
+Ce cours d'[introduction à la gestion des versions à l'aide de GIT](#introduction_main)  est divisé en quatre séances pratiques :
 
 >* [TP 1 : Travailler sur un répertoire local ](./tp1/index.md)
 >* [TP 2 : Travailler en autonomie sur un depôt github distant ](./tp2/index.md) 
 >* [TP 3 : Travailler en équipe sur un depôt github distant ](./tp3/index.md)
+>* [TP 4 : Résolution de conflits et pull request ](./tp4/index.md)
 
 
 ## Liens d'aide pour le cours 
