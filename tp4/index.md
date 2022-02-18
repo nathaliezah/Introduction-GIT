@@ -26,7 +26,7 @@
 
 L'objectif de ce TP est double. D'une part, lorsque plusieurs personnes interagissent avec un référentiel Git, des conflits peuvent survenir, c'est-à-dire problèmes d'intégration des changements produits par plusieurs utilisateurs. Le premier objectif de ce TP est **i) d'apprendre comment nous pouvons résoudre des conflits**. D'autre part, **ii) nous allons apprendre à utiliser l'option `pull request`**. Cette option n'est pas standard dans git, mais une fonctionnalité ajoutée par différentes plates-formes telles que github. Les `pull request` sont couramment utilisées par les équipes qui collaborent dans un référentiel partagé, où tout le monde partage un référentiel unique et les branches thématiques sont utilisées pour développer des fonctionnalités et isoler les modifications.
 
->1. [Créer un compte sur github](#pull-request)
+>1. [Créer un conflit](#pull-request)
 2. [Résoudre un conflit](#conflit)
 3. [Un exemple simple de pull request](#pullrequest)
    
