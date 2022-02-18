@@ -144,9 +144,6 @@ $ git push
 </div>
 
 
-
-
-
 [Haut de la page](#TP4)
 
 -----
@@ -154,191 +151,17 @@ $ git push
 <a id='pullrequest'></a>
 ## 3. Un exemple simple de pull request   
 
-Jusqu'à présent, nous avons travaillé sur le dépôt git local `tp1`, il est temps de sauvegarder ce dépôt sur github. Pour ce faire, nous allons suivre une description qui montre comment le faire étape par étape. Mais tout d'abord, il est pratique de faire une brève introduction de trois commandes dans git qui nous aideront à gérer notre répertoire distant à partir de notre répertoire local sur la ligne de commande. 
+Comme nous l'avons mentionné au début de ce TP, une demande d'extraction n'est pas standard dans git, mais une fonctionnalité ajoutée par différentes plateformes comme github. Cependant, cette façon de travailler est devenue un standard de facto dans le développement d'applications open source. L'idée principale est de proposer un mécanisme par lequel nous pouvons proposer des modifications à un référentiel même sans en être les développeurs ou les propriétaires. 
 
-* `git remote` :
-: cette commande sert à gérer (ajouter) des dépôts distants ("remotes"). En d'autres termes, nous utiliserons cette commande pour créer un lien entre notre dépôt local `tp1` et celui distant que nous allons créer dans github. 
+En quelques mots, une pull request consiste à faire une copie d'un réferentiel sur notre compte, à créer une branche pour apporter des modifications et à notifier le propriétaire du réferentiel d'origin afin qu'il accepte les changements que nous proposons. 
 
-* `git push` :
-: cette commande permet de mettre à jour le dépôt distant (e.g. github) à partir de la dernière version validée (_commit)_ de notre dépôt local. 
-
-* `git pull` :
-: cette commande sert à mettre à jour notre dépot local à partir de la dernière version de notre dépôt distant. 
-
-**Êtes-vous prêts ? Allons commencer à travailler avec github !!** La première tâche sera de sauvegarder une copie de notre répertoire local `tp1` sur github. 
-
-* Allez jusqu'au répertoire tp1, de sorte que la commande `pwd` affiche le résultat suivant :
-
-```shell
-$:> pwd
-/.../courseGIT/tp1 
-```
-
-* Sur le site Web de github, allez en haut à droite et cliquez sur **New repository** comme indiqué dans l'image :
-
-![New repository github](./images/clicknewrepo.png)
-
-* Dans le formulaire, tapez **tp1** sous **Repository name** et laissez le reste des champs vides (comme indiqué dans l'image). Vous pouvez choisir que votre dépôt `tp1` soit public ou privé. 
-
-![Create empty repository github](./images/createemptyrepo.png)
-
-* Vous venez de créer un dépôt vide dont le lien `https://github.com/<votre_utilisateur>/tp1.git` sera affiché comme dans l'image ci-dessous. 
-
-![Information empty repository](./images/emptyrepo.png)
-
-* Tapez dans la console la ligne suivante pour vérifier que votre dépôt local `tp1` n'est pas encore lié à un dépôt distant. La réponse de cette commande ne doit rien afficher. 
-
-```shell
-$:~/courseGIT/tp1> git remote -v
-```
-
-* Maintenant, nous allons lier notre dépôt local `tp1` au répertoire distant `git@github.com:<votre_utilisateur>/tp1.git` pour ce faire, écrivez la commande suivante en remplaçant `<votre_utilisateur>` par votre utilisateur. 
-
-```shell
-$:~/courseGIT/tp1> git remote add origin git@github.com:<votre_utilisateur>/tp1.git
-```
-* Jusqu'à présent, nous n'avons pas examiné le concept de branche dans git, et nous n'entrerons pas dans le détail avant la prochaine séance. Cependant, il faut savoir que toutes les versions que nous sauvegardons avec les différentes _commits_ sont stockées dans une branche. Normalement cette branche s'appellera **master** ou **main**. Pour finir d'établir le lien entre le dépôt local et distant, nous aurons besoin de connaître le nom de cette branche. Pour ce faire, tapez la commande suivante : 
-
-```shell
-$:~/courseGIT/tp1> git branch
-*master
-```
-* Il ne reste plus qu'à créer le lien de manière permanente et mettre à jour le dépôt distant. Pour ce faire, écrivons la commande suivante: 
-
-```shell
-$:~/courseGIT/tp1> git push -u origin master
-```
-
-* Alors que la commande `git push` essaie d'écrire dans le dépôt distant, vous devriez voir des messages similaires à :
-
-```shell
-Counting objects: 19, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (14/14), done.
-Writing objects: 100% (19/19), 2.11 KiB | 0 bytes/s, done.
-Total 19 (delta 0), reused 0 (delta 0)
-To https://github.com/juanluck/tp1.git
- * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
-```
-* **Félicitations !!** les deux dépôts, local et distant, sont maintenant synchronisés. Allez sur le site de votre projet `https://github.com/<votre_utilisateur>/tp1` et voir les résultats. **N'est-ce pas cool ?**
-
-[Haut de la page](#TP2)
-
------
-
-<a id='sequence'></a>
-## 4. Séquence de travail avec un dépôt distant 
-
-Dans le [tp1](../tp1/index.md), nous avons vu comment établir une séquence de travail simple dans un répertoire local pour enregistrer la trace des différentes versions de notre projet à l'aide de la séquence de commandes suivant : `git status` -> `git add fichier` -> `git commit -m "message"` -> `git status` -> `git add fichier` -> `...`
-
-Une fois que le lien entre notre dépôt local et distant a été établi, nous allons introduire les commandes `git pull` et` git push` dans cette séquence et ainsi pouvoir synchroniser le _commit_ local avec le dépôt distant . En bref, cette séquence se compose des commandes suivantes :
-
-
-
-* Tout d'abord, nous allons _puller_ (télécharger et synchroniser) la version la plus récente du dépôt distant vers notre dépôt local :
-
-```shell
-$:~/courseGIT/tp1> git pull
-```
-
-* **(Optionnel )** Nous pouvons voir les modifications les plus récentes (écrites par nous ou un collègue) si nous tapons :
-
-```shell
-$:~/courseGIT/tp1> git log
-```
-
-* Une fois que nous avons la version la plus récente, nous pouvons commencer à introduire des modifications dans nos fichiers locaux et effectuer la séquence que nous connaissons déjà pour enregistrer la nouvelle version dans notre référentiel local :
-
-```shell
-$:~/courseGIT/tp1> git status
-$:~/courseGIT/tp1> git add .
-$:~/courseGIT/tp1> git commit -m "Message pour le log"
-```
-
-* Finalement, une fois que notre référentiel local a la bonne version, il suffit de le synchroniser (_pusher_) avec le dépôt distant avec la commande : 
-
-```shell
-$:~/courseGIT/tp1> git push
-```
+Nous vous proposons ici un exercice pour faire une pull request. 
  
 ### Exercice
->1. Modifiez le fichier Cryptomonnaie.java avec le code ci-dessous. Pour synchroniser correctement les dépôts, commencez par faire un `git pull` ->` git log`, puis modifiez le fichier pour ensuite continuez avec la sequence `git status` ->` git add Cryptomonnaie.java` -> `git commit -m" Ajout de getters et setters "` - > `git push`. Vérifiez que le référentiel github a été mis à jour. 
+>1. Allez sur le site https://github.com/juanluck/test-pull-request-2022 et faites une `pull request` en suivant les instructions décrites dans le fichier **README.md**  
 
-```java
-public class Cryptomonnaie{
-    private String nom;
-    private double valeurDeJeton; // Imaginons en euros
-
-    public Cryptomonnaie(String nom, double valeurDeJeton){
-        this.nom = nom;
-        this.valeurDeJeton = valeurDeJeton;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public double getValeurDeJeton() {
-        return valeurDeJeton;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%5s",nom) + ":" + String.format("%10.1f",valeurDeJeton);
-    }
-}
-```
-
-[Haut de la page](#TP2)
-
------
-<a id='clone'></a>
-## 5. Cloner un dépôt distant sur notre machine locale 
-
-Dans la [section 3](#pushremote), nous avons appris à initialiser un dépôt localement (avec `git init`) et puis à le synchroniser avec un répertoire distant. Cependant, la plupart du temps, nous allons utiliser un **mécanisme beaucoup plus simple** pour relier les deux dépôts : **le clone**. Pour apprendre ce mécanisme, nous allons créer un nouveau dépôt sur github que nous appellerons `tp2` (**au revoir tp1 !**). 
-
-<div class="note">
-	<strong>NOTE : </strong> Lorsque vous aurez un peu plus d'expérience, vous verrez à quel point le clonage d'un dépôt distant est la méthode de travail la plus courante et la plus simple. Dans cet exercice, nous reproduisons ce workflow. 
-</div>
-
-* Allons directement sur github pour créer un nouveau répertoire `tp2` en suivant le formulaire ci-dessous :
-
-![Create repository tp2 in github](./images/createRepoTp2.png)
-
-
-* Vous venez de créer un nouveau dépôt `tp2`. Pour obtenir le lien pour le cloner, cliquez sur <mark style="background-color:green;color:white">Code</mark> comme indiqué dans l'image suivante :
-
-![Clone info tp2 in github](./images/cloneInfoTp2.png)
-
-* Maintenant, il suffit d'aller dans le répertoire courseGIT :
-
-```shell
-$:~/courseGIT> ls
-tp1
-```
-
-* et d'écrire la commande suivante :
-
-```shell
-$:~/courseGIT> git clone git@github.com:<votre_utilisateur>/tp2.git
-```
-
-* Si nous écrivons maintenant la commande `ls`, nous verrons qu'un nouveau répertoire `tp2` a été créé. Ce répertoire contient un dépôt local qui est déjà lié et synchronisé avec le dépôt distant sur github _(contrairement à la [section 2.](#pushremote), nous n'aurons pas besoin de configurer le lien avec `git remote` ni avec `git push -u origin master`. Si facile !.)_ 
-
-```shell
-$:~/courseGIT> ls
-tp1 tp2
-```
-### Exercices
->1. Allez dans le répertoire `tp2` et mettez à jour tous les fichiers avec ceux du répertoire `tp1` (README.md et src/Cryptomonnaie.java) (surtout ne copiez pas le répertoire caché .git).
-2.  En utilisant [la séquence](#sequence) que nous avons apprise, synchronisez les dépôts local et distant. 
-
-
- 
-
-[Haut de la page](#TP2)
+[Haut de la page](#TP4)
 
 -----
 
-**Fin du TP 2**
+**Fin du TP 4**
