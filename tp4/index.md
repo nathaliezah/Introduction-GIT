@@ -16,7 +16,7 @@
 </style>
 
 <a id='TP4'></a>
-# TP 4 : Pull request et résolution de conflits  
+# TP 4 : Résolution de conflits  et pull request 
 [Retour à la page principale](../index.md)
 
 
@@ -24,13 +24,11 @@
 
 ## Objectifs du TP 4
 
-L'objectif de ce dernier TP est d'apprendre certaines fonctionnalités de git que vous allez utiliser de manière récurrente : l'option pull request et la résolution des conflits. 
+L'objectif de ce TP est double. D'une part, lorsque plusieurs personnes interagissent avec un référentiel Git, des conflits peuvent survenir, c'est-à-dire problèmes d'intégration des changements produits par plusieurs utilisateurs. Le premier objectif de ce TP est **i) d'apprendre comment nous pouvons résoudre des conflits**. D'autre part, **ii) nous allons apprendre à utiliser l'option `pull request`**. Cette option n'est pas standard dans git, mais une fonctionnalité ajoutée par différentes plates-formes telles que github. Les `pull request` sont couramment utilisées par les équipes qui collaborent dans un référentiel partagé, où tout le monde partage un référentiel unique et les branches thématiques sont utilisées pour développer des fonctionnalités et isoler les modifications.
 
 >1. [Créer un compte sur github](#pull-request)
-2. [Ajouter une nouvelle clé SSH à votre compte GitHub](#cle)
-3. [Pousser un dépôt existant depuis la ligne de commande](#pushremote)
-4. [Séquence de travail avec un dépôt distant](#sequence)
-5. [Cloner un dépôt distant sur notre machine locale](#clone)
+2. [Résoudre un conflit](#conflit)
+3. [Un exemple simple de pull request](#pullrequest)
    
 
 [Haut de la page](#TP4)
@@ -40,11 +38,13 @@ L'objectif de ce dernier TP est d'apprendre certaines fonctionnalités de git qu
 <a id='creation-conflits'></a>
 ## 1. Créer un conflit  
 
+Normalement, dans le développement réel d'une application, des conflits se produiront spontanément. Cependant, pour notre formation, nous allons intentionnellement forcer un conflit dans git.
 
-Allez sur github et créer un repositoire avec le fichier **README.md** suivant :
+Dans la plupart des cas, git est capable de mélanger les modifications que différents utilisateurs apportent à différents fichiers, mais si deux utilisateurs apportent des modifications au même fichier localement (surtout si la modification se trouve sur la même ligne), git ne pourra pas savoir quelle modification est la bonne.
+
+- Soit <mark style="background-color:red;font-weight:bold; color:white">Athos</mark> ou  <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark>, Allez sur github et créer un repositoire `test-conflict` avec le fichier **README.md** ci-dessous.
 
 ```shell
-**README.md**
 # test-conflict
 
 Normalement, dans le développement réel d'une application, des conflits se produiront spontanément. Cependant, pour notre formation, nous allons intentionnellement forcer un conflit dans git.
@@ -55,21 +55,28 @@ Dans la plupart des cas, git est capable de mélanger les modifications que diff
 
 - **Athos** corrigera la première faute de frappe (deux) et **Porthos** la seconde (fautes de frappe) 
 
-- Chacun va faire un clone du projet et corriger sa faute de frappe localement, puis essayer de faire un `push` du changement. 
+- Chacun va faire un clone du repositoire et corriger sa faute de frappe localement, puis essayer de faire un `push` du changement. 
 
 ```
+- Invitez votre collègue au projet en github. Chacun va faire un clone du repositoire et corriger sa faute de frappe localement (n'oubliez de faire un `commit` des changements), puis essayer de faire un `push` pour synchroniser les modifications avec le dêpòt distant . 
 
-Après le push de Athos, le message suivant signale un conflit :
+- Pour forcer le conflit, ne corrigez pas les erreurs dans le fichier tant que vous n'avez pas tous les deux cloné le référentiel. 
+
+- Imaginons que c'est <mark style="background-color:green;font-weight:bold; color:white">Porthos</mark> le premier à corriger le fichier **README.md** et faire un `push` des modifications (éventuellement, cela fonctionnerait aussi dans l'autre sens, si Athos est le premier à faire le `push`).
+
+- Empêchez surtout <mark style="background-color:red;font-weight:bold; color:white">Athos</mark> de faire un `pull`. Cela synchroniserait les répertoires et nous ne produirions pas de conflit. 
+
+- Ensuite, <mark style="background-color:red;font-weight:bold; color:white">Athos</mark> corrigera sa ligne du fichier, validera les modifications (`commit`) et tentera de synchroniser les répertoires local et distant (`push`). Le message suivant signale un conflit :
 
 ```shell
-From github.com:juanluck/test-conflict
+From github.com:<utilisateur>/test-conflict
    1094a44..dcb1032  main       -> origin/main
 Auto-merging README.md
 CONFLICT (content): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-Si nous essayons de faire un git pull, nous aurons également le message suivant :
+- Si nous essayons de faire un `git pull`, nous aurons également le message suivant :
 
 ```shell
 error: Pulling is not possible because you have unmerged files.
@@ -77,13 +84,15 @@ hint: Fix them up in the work tree, and then use 'git add/rm <file>'
 hint: as appropriate to mark resolution and make a commit.
 fatal: Exiting because of an unresolved conflict.
 ```
-
+- **Nous venons de générer un conflit !!** Dans la section suivante, nous essaierons de le corriger. 
 
 ---
-<a id='cle'></a>
-## 2. Résoudre un conflit (avec `git diff`) 
+<a id='conflit'></a>
+## 2. Résoudre un conflit  
 
-git diff
+Nous continuerons cette section sur la machine <mark style="background-color:red;font-weight:bold; color:white">Athos</mark>, qui est initialement la personne avec le conflit. 
+
+- Pour déterminer le conflit, nous pouvons écrire la commande `git diff`, qui produira la sortie suivante :
 
 ```shell
 diff --cc README.md                                                                                                                                        
@@ -142,8 +151,8 @@ $ git push
 
 -----
 
-<a id='pushremote'></a>
-## 3. Résoudre un conflit (avec `git mergetool`)  
+<a id='pullrequest'></a>
+## 3. Un exemple simple de pull request   
 
 Jusqu'à présent, nous avons travaillé sur le dépôt git local `tp1`, il est temps de sauvegarder ce dépôt sur github. Pour ce faire, nous allons suivre une description qui montre comment le faire étape par étape. Mais tout d'abord, il est pratique de faire une brève introduction de trois commandes dans git qui nous aideront à gérer notre répertoire distant à partir de notre répertoire local sur la ligne de commande. 
 
