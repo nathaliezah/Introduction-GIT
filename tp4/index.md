@@ -151,7 +151,7 @@ $ git push
 <a id='pullrequest'></a>
 ## 3. Un exemple simple de pull request   
 
-Comme nous l'avons mentionné au début de ce TP, une demande d'extraction n'est pas standard dans git, mais une fonctionnalité ajoutée par différentes plateformes comme github. Cependant, cette façon de travailler est devenue un standard de facto dans le développement d'applications open source. L'idée principale est de proposer un mécanisme par lequel nous pouvons proposer des modifications à un référentiel même sans en être les développeurs ou les propriétaires. 
+Comme nous l'avons mentionné au début de ce TP, _un pull request_ n'est pas standard dans git, mais une fonctionnalité ajoutée par différentes plateformes comme github. Cependant, cette façon de travailler est devenue un standard de facto dans le développement d'applications open source. L'idée principale est de proposer un mécanisme par lequel nous pouvons proposer des modifications à un référentiel même sans en être les développeurs ou les propriétaires. 
 
 En quelques mots, une pull request consiste à faire une copie d'un réferentiel sur notre compte, à créer une branche pour apporter des modifications et à notifier le propriétaire du réferentiel d'origin afin qu'il accepte les changements que nous proposons. 
 
