@@ -51,7 +51,7 @@ Vous venez de créer une page web dépourvue de contenu. Dans cette section, nou
 
 ### Flux de travail
 
-Les [pages Github](https://pages.github.com/) vous permettent de traiter les mises à jour de sites Web comme s'il s'agissait simplement d'un autre référentiel. Après avoir créé le site Web (voir section précédente), vous devez cloner le référentiel localement (```git clone ...```). Vous l'avez probablement déjà cloné sur votre machine locale.
+Les [pages Github](https://pages.github.com/) vous permettent de traiter les mises à jour de sites Web comme s'il s'agissait simplement d'un autre référentiel. Après avoir créé le site Web (voir section précédente), vous devez cloner le référentiel localement (```git clone ...```). 
 
 Ce qui est intéressant avec les pages github, c'est que le contenu web est traité dans une branche appelée ```gh-pages```. Cela nous permet de différencier le contenu web (qui sera traité dans la branche ```gh-pages```) de la partie du code du répositoire (qui sera normalement dans la branche principale ```main```).
 
@@ -89,6 +89,13 @@ Rien n'empêche tout type de contenu dans cet exercice. Ci-dessous, nous vous mo
 - **Insertion image externe (Passez la souris sur l'image)**
 
 ![Image Linus](https://upload.wikimedia.org/wikipedia/commons/e/e8/Lc3_2018_%28263682303%29_%28cropped%29.jpeg "Lorsque vous passez votre souris sur l'image de Linus, ce titre apparaît. Comment se fait ceci?")
+
+- **Insertion d'un tableau**
+
+| Item         | Pris | Stock |
+|--------------|:-----:|-----------:|
+| Pommes |  1.99 |        739 |
+| Bananas      |  1.89 |          6 |
 
 - **Insertion de contenu avec css**
 
