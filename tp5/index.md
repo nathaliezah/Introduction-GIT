@@ -26,7 +26,7 @@ img[alt=drawing] { width: 200px; }
 
 ## Objectifs du TP 5
 
-En plus de toutes les fonctionnalités vues précédemment, avec les **pages GitHub**, GitHub vous permet d'héberger une page Web à partir d'un référentiel. Dans ce TP, nous allons apprendre à :
+Avec les [pages Github](https://pages.github.com/), GitHub vous permet d'héberger une page Web à partir d'un référentiel. Dans ce TP, nous allons apprendre à :
 
 >1. [Créer un site Web pour un référentiel](#creation-web)
 2. [Ajouter du contenu à l'aide de Markdown et HTML](#markdown)
@@ -40,6 +40,49 @@ En plus de toutes les fonctionnalités vues précédemment, avec les **pages Git
 
 <a id='creation-web'></a>
 ## 1. Créer un site Web pour un référentiel existant 
+
+Parmi de nombreuses autres fonctionnalités, github vous permet d'héberger des sites Web dans l'extension github.io. Ce même cours en est un exemple : le site https://juanluck.github.io/Introduction-GIT n'est rien de plus qu'un dépôt github rendu public sous la forme d'un site web.
+
+Il existe de nombreuses raisons pour lesquelles nous pourrions souhaiter avoir un site Web hébergé sur github : l'hébergeur est gratuit, la plate-forme est bien connue et elle peut même être utilisée comme site Web personnel. De plus, la mise à jour du contenu et le workflow se fait facilement grâce aux commandes que l'on connait déjà : il suffit de cloner un référentiel, de modifier localement le contenu souhaité, de le valider (```git commit```) et de  mettre à jour le site (```git push```). Ne vous inquiétez pas, nous verrons cela étape par étape.
+
+Dans cette section, nous allons créer une page Web associée à un référentiel existant. Pour cela nous suivrons les étapes suivantes :
+
+-  Aller sur votre dépôt github du **tp3**. Ce référentiel est à retrouver sur le site ```https://github.com/<votre-utilisateur-github>/tp3```
+
+- Si nous voulons publier une page Web associée à ce référentiel, nous aurons besoin qu'il soit publique (sauf si vous avez un compte github premium). Pour cela, allez sur **Settings** et puis, en bas de page cliquez sur **Change visibility** puis sur **Make public**.
+
+- Encore en **Settings** cliquez sur **Pages** comme dans l'image ci-dessous, puis sur **Choose a theme** :
+
+![](./images/pages.png)
+
+- Sélectionnez un des thèmes puis cliquez sur **Select theme** :
+
+![](./images/themes.png)
+
+- Cette action vous amènera à un autre écran où vous allez créer un fichier **index.md** par défaut. Ce fichier sera votre page d'accueil. Cliquez sur **Commit changes** :
+
+![a](./images/index.png)
+
+- Quelque chose d'intéressant qui vient de se passer est que le référentiel a maintenant deux branches, la branche ```gh-pages``` (où nous aurons le contenu Web) et la branche principale ```main``` (où nous continuons à avoir notre code):
+
+![a](./images/branches.png)
+
+- Maintenant que nous avons la nouvelle branche ```gh-pages``` dans le référentiel distant sur github, ce que nous devons faire est de la mettre à jour dans notre répertoire local. Pour ce faire :
+
+    - Allons au répertoire **tp3** de notre machine (dépôt local). Si nous ne trouvons pas ce répertoire, une autre option consiste à cloner à nouveau le référentiel github.
+    - La commande qui nous permet de récupérer la branche distante est ```git fetch```. Tapez :
+    ```
+        $ git fetch origin gh-pages
+    ```
+    - Ensuite, pour passer localement à la branche ```gh-pages```, tapez :
+    ```
+        $ git checkout gh-pages
+    ```
+
+ #### Vérification du contenu Web par défaut
+ 
+ Si vous êtes déjà dans la branche ```gh-pages``` du répertoire local, vous pouvez voir qu'il existe un fichier ```index.md``` qui contient le contenu Web écrit en markdown. Ce contenu est publiquement accessible sur le site ```https://<votre-utilisateur-github>.github.io/tp3/```. Dans la section prochaine, on va apprendre comment modifier ce contenu.
+ 
 
 [Haut de la page](#TP5)
 
@@ -120,6 +163,8 @@ La [SAE 2.03](https://di.iut.univ-lehavre.fr/pedago/info1/SAE_2_03/index.xml) po
 
 Ce qu'il faut savoir c'est qu'on va faire **le compte-rendu de ce SAE en utilisant les pages github**. Cette section est destinée à créer un site Web que nous devrons compléter au fur et à mesure de notre progression dans la SAE.
 
+### Préliminaires à lire attentivement
+
 <div class="note">
 	<h3> Préliminaires </h3>
 
@@ -156,6 +201,15 @@ Ce qu'il faut savoir c'est qu'on va faire **le compte-rendu de ce SAE en utilisa
 	</ul>
 
 </div>
+
+### Création du site web
+
+### Exercice
+> 1. En suivant les étapes décrites dans ce TP, nous allons créer un nouveau référentiel que nous appellerons ```docker-sae203```
+2. L'un des membres de l'équipe créera le référentiel et invitera les autres membres au projet. Le document sera géré par tous les membres de l'équipe.
+3. **Attention :** sauf si vous avez un compte premium sur github, le dépôt doit être public pour pouvoir publier le site.
+
+Ce TP se termine ici. Bien que vous ne puissiez pas encore fournir de contenu au site Web (c'est-à-dire que vous n'avez pas commencé avec docker), vous pouvez déjà commencer à travailler sur la structure et la forme du document. Privilégier le travail sur différents fichiers pour éviter les conflits.
 
 [Haut de la page](#TP5)
 
