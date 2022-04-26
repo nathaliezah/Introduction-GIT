@@ -24,11 +24,11 @@
 
 ## Objectifs du TP 5
 
-En plus de toutes les fonctionnalités vues précédemment, avec les **pages GitHub**, GitHub vous permet d'héberger une page Web à partir de votre référentiel. Dans ce TP, nous allons apprendre à :
+En plus de toutes les fonctionnalités vues précédemment, avec les **pages GitHub**, GitHub vous permet d'héberger une page Web à partir d'un référentiel. Dans ce TP, nous allons apprendre à :
 
->1. [Créer un site Web pour un référentiel existant](#creation-web)
+>1. [Créer un site Web pour un référentiel](#creation-web)
 2. [Ajouter du contenu à l'aide de Markdown](#markdown)
-3. [Créer notre page personnelle hébergée sur github](#page-perso)
+3. [Créer un site Web pour la SAE 2.03](#sae)
 
    
 
@@ -40,19 +40,24 @@ En plus de toutes les fonctionnalités vues précédemment, avec les **pages Git
 ## 1. Créer un site Web pour un référentiel existant 
 
 [Haut de la page](#TP5)
+
 ---
 <a id='markdown'></a>
 ## 2. Ajouter du contenu à l'aide de Markdown  
 
 
 [Haut de la page](#TP5)
+
 -----
 
-<a id='page-perso'></a>
-## 3. Créer notre page personnelle hébergée sur github  
+<a id='sae'></a>
+## 3. Créer un site Web pour la SAE 2.03  
+
+La [SAE 2.03](https://di.iut.univ-lehavre.fr/pedago/info1/SAE_2_03/index.xml) porte sur l'installation de services réseaux.
 
 
 [Haut de la page](#TP5)
 
+-----
 
 **Fin du TP 5**
