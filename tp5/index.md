@@ -93,7 +93,7 @@ Rien n'empêche tout type de contenu dans cet exercice. Ci-dessous, nous vous mo
 - **Insertion de contenu avec css**
 
 <div class="note">
-
+Cette boîte a été générée avec css. Oserez-vous reproduire le résultat ?
 </div>
 
 - **Intégration vidéo youtube**
