@@ -27,7 +27,7 @@
 En plus de toutes les fonctionnalités vues précédemment, avec les **pages GitHub**, GitHub vous permet d'héberger une page Web à partir d'un référentiel. Dans ce TP, nous allons apprendre à :
 
 >1. [Créer un site Web pour un référentiel](#creation-web)
-2. [Ajouter du contenu à l'aide de Markdown](#markdown)
+2. [Ajouter du contenu à l'aide de Markdown et HTML](#markdown)
 3. [Créer un site Web pour la SAE 2.03](#sae)
 
    
@@ -43,8 +43,34 @@ En plus de toutes les fonctionnalités vues précédemment, avec les **pages Git
 
 ---
 <a id='markdown'></a>
-## 2. Ajouter du contenu à l'aide de Markdown  
+## 2. Ajouter du contenu à l'aide de Markdown et HTML 
 
+Vous venez de créer une page web dépourvue de contenu. Dans cette section, nous vous invitons à vous familiariser avec les outils de [markdown](https://www.markdownguide.org) et [html](https://www.w3schools.com/tags/default.asp) pour savoir comment ajouter un tel contenu. Soyez libre, cet exercice n'est pas évalué, il s'agit simplement de jouer et de vous familiariser avec l'environnement.
+
+### Flux de travail
+
+Les [pages Github](https://pages.github.com/) vous permettent de traiter les mises à jour de sites Web comme s'il s'agissait simplement d'un autre référentiel. Après avoir créé le site Web (voir section précédente), vous devez cloner le référentiel localement (```git clone ...```). Vous l'avez probablement déjà cloné sur votre machine locale.
+
+Ce qui est intéressant avec les pages github, c'est que le contenu web est traité dans une branche appelée ```gh-pages```. Cela nous permet de différencier le contenu web (qui sera traité dans la branche ```gh-pages```) de la partie du code du répositoire (qui sera normalement dans la branche principale ```main```).
+
+Pour vous assurer que nous modifions le contenu Web, accédez à votre référentiel local et tapez :
+
+```shell
+$ git branch
+* gh-pages
+  main
+```
+
+
+### Exemples 
+
+Rien n'empêche tout type de contenu dans cet exercice. Ci-dessous, nous vous montrons quelques exemples. Certains d'entre eux sont insérés grâce au markdown et d'autres grâce au html. Essayez de les reproduire mais n'en restez pas là. Explorez les possibilités.
+
+- **Intégration vidéo youtube**
+
+ <iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe> 
 
 [Haut de la page](#TP5)
 
