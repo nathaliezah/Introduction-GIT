@@ -22,7 +22,7 @@ Plus précisément, nous aurons besoin de :
    * Installation de git sur ubuntu : `sudo apt-get update; sudo apt-get install git `
    * [Installation de git sur windows 10](https://www.develves.net/blogs/asd/articles/using-git-with-powershell-on-windows-10/#installing-git)
 3. Une machine virtuelle Java[^1]
-4. Pour le [TP 2](./tp2/index.md), [TP 3](./tp3/index.md) et [TP 4](./tp4/index.md) une compte sur [github](https://github.com/)
+4. Pour le [TP 2](./tp2/index.md), [TP 3](./tp3/index.md),  [TP 4](./tp4/index.md) et [TP 5](./tp5/index.md) une compte sur [github](https://github.com/)
 
 [^1]: La machine virtuelle Java n'est pas nécessaire pour git mais pour les exercices proposés.
 
@@ -34,7 +34,7 @@ Ce cours d'[introduction à la gestion des versions à l'aide de GIT](#introduct
 >* [TP 2 : Travailler en autonomie sur un depôt github distant ](./tp2/index.md) 
 >* [TP 3 : Travailler en équipe sur un depôt github distant ](./tp3/index.md)
 >* [TP 4 : Résolution de conflits et pull request ](./tp4/index.md)
-
+>* [TP 5 : Comment créer un site Web sur GitHub pages ](./tp5/index.md)
 
 ## Liens d'aide pour le cours 
 
