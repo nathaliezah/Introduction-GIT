@@ -79,7 +79,7 @@ Dans cette section, nous allons créer une page Web associée à un référentie
         $ git checkout gh-pages
     ```
 
- #### Vérification du contenu Web par défaut
+#### Vérification du contenu Web par défaut
  
  Si vous êtes déjà dans la branche ```gh-pages``` du répertoire local, vous pouvez voir qu'il existe un fichier ```index.md``` qui contient le contenu Web écrit en markdown. Ce contenu est publiquement accessible sur le site ```https://<votre-utilisateur-github>.github.io/tp3/```. Dans la section prochaine, on va apprendre comment modifier ce contenu.
  
