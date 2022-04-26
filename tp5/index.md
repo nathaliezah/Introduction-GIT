@@ -84,7 +84,7 @@ Rien n'empêche tout type de contenu dans cet exercice. Ci-dessous, nous vous mo
 
 - **Insertion image interne (stocké dans ./images)**
 
-![drawing](./images/linus.jpeg "")
+![drawing](./images/linus.jpeg "Comment avons-nous modifié la taille de l'image ?")
 
 - **Insertion image externe (Passez la souris sur l'image)**
 
