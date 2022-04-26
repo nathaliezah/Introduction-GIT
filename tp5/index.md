@@ -209,7 +209,7 @@ Ce qu'il faut savoir c'est qu'on va faire **le compte-rendu de ce SAE en utilisa
 2. L'un des membres de l'équipe créera le référentiel et invitera les autres membres au projet. Le document sera géré par tous les membres de l'équipe.
 3. **Attention :** sauf si vous avez un compte premium sur github, le dépôt doit être public pour pouvoir publier le site.
 
-Ce TP se termine ici. Bien que vous ne puissiez pas encore fournir de contenu au site Web (c'est-à-dire que vous n'avez pas commencé avec docker), vous pouvez déjà commencer à travailler sur la structure et la forme du document. Privilégier le travail sur différents fichiers pour éviter les conflits.
+Ce TP se termine ici. Bien que vous ne pouvez pas encore fournir de contenu au site Web (c'est-à-dire que vous n'avez pas commencé avec docker), vous pouvez déjà commencer à travailler sur la structure et la forme du document. Privilégier le travail sur différents fichiers pour éviter les conflits.
 
 [Haut de la page](#TP5)
 
