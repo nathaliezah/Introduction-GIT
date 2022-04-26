@@ -60,7 +60,13 @@ $ git branch
 * gh-pages
   main
 ```
+Si l'étoile est sur la branche ```main```, vous devez faire un ```checkout``` sur la branche ```gh-pages``` avec la commande :
 
+```shell
+$ git checkout gh-pages
+```
+
+Désormais, toutes les modifications que vous apporterez au fichier ```index.md``` (ou autres), modifieront le contenu web. Pour le mettre à jour sur le site Web, nous le traitons comme un autre référentiel. C'est-à-dire qu'il faut valider les changements, faire un ```commit``` et enfin un ```push```.
 
 ### Exemples 
 
