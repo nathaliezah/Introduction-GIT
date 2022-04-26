@@ -13,6 +13,8 @@
   border-radius: 4px !important;
   border: 1px solid #000000; !important;
 }
+
+img[alt=drawing] { width: 200px; }
 </style>
 
 <a id='TP5'></a>
@@ -70,7 +72,29 @@ Désormais, toutes les modifications que vous apporterez au fichier ```index.md`
 
 ### Exemples 
 
-Rien n'empêche tout type de contenu dans cet exercice. Ci-dessous, nous vous montrons quelques exemples. Certains d'entre eux sont insérés grâce au markdown et d'autres grâce au html. Essayez de les reproduire mais n'en restez pas là. Explorez les possibilités.
+Rien n'empêche tout type de contenu dans cet exercice. Ci-dessous, nous vous montrons quelques exemples. Certains d'entre eux sont insérés grâce au markdown et d'autres grâce au html. Essayez de les reproduire mais n'en restez pas là. Explorez des differents possibilités.
+
+- **Accès à une page web interne**
+
+[Cliquez sur ce lien](./exemple/exemple.md)
+
+- **Accès à une page web externe**
+
+[Cliquez sur ce lien](https://en.wikipedia.org/wiki/Linus_Torvalds)
+
+- **Insertion image interne (stocké dans ./images)**
+
+![drawing](./images/linus.jpeg "")
+
+- **Insertion image externe (Passez la souris sur l'image)**
+
+![Image Linus](https://upload.wikimedia.org/wikipedia/commons/e/e8/Lc3_2018_%28263682303%29_%28cropped%29.jpeg "Lorsque vous passez votre souris sur l'image de Linus, ce titre apparaît. Comment se fait ceci?")
+
+- **Insertion de contenu avec css**
+
+<div class="note">
+
+</div>
 
 - **Intégration vidéo youtube**
 
