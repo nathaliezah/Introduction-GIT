@@ -94,7 +94,7 @@ Vous venez de créer une page web dépourvue de contenu. Dans cette section, nou
 
 ### Flux de travail
 
-Les [pages Github](https://pages.github.com/) vous permettent de traiter les mises à jour de sites Web comme s'il s'agissait simplement d'un autre référentiel. Après avoir créé le site Web (voir section précédente), vous devez cloner le référentiel localement (```git clone ...```). 
+Les [pages Github](https://pages.github.com/) vous permettent de traiter les mises à jour de sites Web comme s'il s'agissait simplement d'un autre référentiel. Après avoir créé le site Web (voir section précédente), vous devez avoir une copie local du référentiel (par exemple à travers de la commande ```git clone ...```). 
 
 Ce qui est intéressant avec les pages github, c'est que le contenu web est traité dans une branche appelée ```gh-pages```. Cela nous permet de différencier le contenu web (qui sera traité dans la branche ```gh-pages```) de la partie du code du répositoire (qui sera normalement dans la branche principale ```main```).
 
