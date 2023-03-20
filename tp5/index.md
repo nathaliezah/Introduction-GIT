@@ -176,13 +176,12 @@ Ce qu'il faut savoir c'est qu'on va faire **le compte-rendu de ce SAE en utilisa
 		<li> <h3>Évaluation de la SAE</h3></li>
 		<ul>
 			<li> Le SAE consistera en un travail d'équipe.</li>
-			<li><b>Travail en équipe :</b></li>
+			<li><b>Travail se fera en équipe :</b></li>
 			<ul>
 					<li>La plupart du temps à la SAE vous allez travailler en équipe. Pour la création du site Web, vous devez avoir l'équipe déjà formée.</li>
 					<li>Le travail consistera à réaliser un projet avec différents types d'exercices en docker. Les résultats seront livrés sur github (lors de la SAE on vous expliquera comment faire). </li>
 					<li> Le compte-rendu du projet se fera par le site web que nous allons commencer à créer dans cette rubrique.</li>
 			</ul>
-			<li><b>Travail individuel :</b></li>
 			
 
 		</ul>
