@@ -175,7 +175,7 @@ Ce qu'il faut savoir c'est qu'on va faire **le compte-rendu de ce SAE en utilisa
 	<ul>
 		<li> <h3>Évaluation de la SAE</h3></li>
 		<ul>
-			<li> Le SAE consistera en un travail d'équipe et un travail individuel, chacun d'eux valant 50% de la note finale.</li>
+			<li> Le SAE consistera en un travail d'équipe.</li>
 			<li><b>Travail en équipe :</b></li>
 			<ul>
 					<li>La plupart du temps à la SAE vous allez travailler en équipe. Pour la création du site Web, vous devez avoir l'équipe déjà formée.</li>
@@ -183,9 +183,7 @@ Ce qu'il faut savoir c'est qu'on va faire **le compte-rendu de ce SAE en utilisa
 					<li> Le compte-rendu du projet se fera par le site web que nous allons commencer à créer dans cette rubrique.</li>
 			</ul>
 			<li><b>Travail individuel :</b></li>
-			<ul>
-					<li>Le travail individuel vous sera proposé le 30 mai et vous aurez l'après-midi pour le compléter.</li>
-			</ul>
+			
 
 		</ul>
 	</ul>
