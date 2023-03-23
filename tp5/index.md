@@ -41,7 +41,7 @@ Avec les [pages Github](https://pages.github.com/), GitHub vous permet d'héberg
 <a id='creation-web'></a>
 ## 1. Créer un site Web pour un référentiel existant 
 
-Parmi de nombreuses autres fonctionnalités, github vous permet d'héberger des sites Web dans l'extension github.io. Ce même cours en est un exemple : le site [https://juanluck.github.io/Introduction-GIT](https://juanluck.github.io/Introduction-GIT) n'est rien de plus qu'un dépôt github rendu public sous la forme d'un site web.
+Parmi de nombreuses autres fonctionnalités, github vous permet d'héberger des sites Web dans l'extension github.io. Ce même cours en est un exemple : le site [https://abderzah.github.io/Introduction-GIT](https://abderzah.github.io/Introduction-GIT) n'est rien de plus qu'un dépôt github rendu public sous la forme d'un site web.
 
 Il existe de nombreuses raisons pour lesquelles nous pourrions souhaiter avoir un site Web hébergé sur github : l'hébergeur est gratuit, la plate-forme est bien connue et elle peut même être utilisée comme site Web personnel. De plus, la mise à jour du contenu et le workflow se fait facilement grâce aux commandes que l'on connait déjà : il suffit de cloner un référentiel, de modifier localement le contenu souhaité, de le valider (```git commit```) et de  mettre à jour le site (```git push```). Ne vous inquiétez pas, nous verrons cela étape par étape.
 
